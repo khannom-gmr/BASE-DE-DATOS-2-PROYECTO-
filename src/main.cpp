@@ -1,12 +1,3 @@
-/* 
- * PARTH BHOIWALA
- * CMPSC 122
- * SPRING 2015
- * PROF. WINSLOW
- * APRIL 3, 2015
- */
-
-
 #include <cstdlib>
 #include <iostream>
 #include <string>
@@ -42,7 +33,7 @@ void displayInst();
 int main(int argc, char** argv) {
 
     
-    cout << "      WELCOME TO THE PROGRAM!" << endl;
+    cout << "       BIENVENIDO AL PROGRAMA!" << endl;
     displayInst();
     
     
@@ -61,11 +52,11 @@ int main(int argc, char** argv) {
     cout << " ~~~~~~~~~~~~ MENU ~~~~~~~~~~~~" << endl;
     cout << " ******************************" << endl;
     cout << endl;
-    cout << " What would you like to Do? " << endl;
-    cout << " 1 - Add mode (add) " << endl;
-    cout << " 2 - Search mode (search) " << endl;
+    cout << " ¿Que le gustaria hacer? " << endl;
+    cout << " 1 - Modo Agregar (add) " << endl;
+    cout << " 2 - Modo Buscar (search) " << endl;
     cout << " 3 - Quit (quit)" << endl;
-    cout << " Choice: ";
+    cout << " Eleccion: ";
     cin >> menuChoice;
     menuChoice = fcnCallerOld.lowerCase(menuChoice);
     
@@ -85,7 +76,7 @@ int main(int argc, char** argv) {
     {
         if (menuChoice != "quit" && menuChoice != "exit" && menuChoice != "3")  /// Quit
         {
-            cout << " Invalid Entry! Try Again " << endl;
+            cout << " ¡Entrada invalida! Intentelo de nuevo " << endl;
         }
     }
     
@@ -100,14 +91,14 @@ int main(int argc, char** argv) {
 
 void displayInst()
 {
-    cout << "  This program has two features: " << endl;
-    cout << "  ADD: Will add info of your car to the file " << endl;
-    cout << "  SEARCH: Will search for the best car for you " << endl;
-    cout << "   ~ HASFEATURE: Look up a car by its Attribute " << endl;
-    cout << "   ~ CHECKAUTO: Look up a car by its Name " << endl;
-    cout << "   ~ SHOW: Display cars that match your criteria" << endl;
-    cout << "   ~ These functions will only work in SEARCH" << endl;
-    cout << "  User Menu will accept 'words' and 'numbers'" << endl;
-    cout << "  The program is Not Case Sensitive " << endl;
+    cout << "  Este programa tiene dos caracteristicas: " << endl;
+    cout << "  ADD: Agregara informacion de su coche al archivo " << endl;
+    cout << "  SEARCH: Buscara el mejor coche para usted " << endl;
+    cout << "   ~ HASFEATURE: Buscar un coche por su atributo " << endl;
+    cout << "   ~ CHECKAUTO: Buscar un coche por su nombre " << endl;
+    cout << "   ~ SHOW: Mostrar los coches que coinciden con sus criterios" << endl;
+    cout << "   ~ Estas funciones solo funcionaran en BUSCAR" << endl;
+    cout << "  El menú de usuario aceptará 'palabras' y 'numeros'"  << endl;
+    cout << "  El programa no distingue entre mayusculas y minusculas " << endl;
 
 }

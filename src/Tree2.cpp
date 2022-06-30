@@ -1,12 +1,3 @@
-/* 
- * PARTH BHOIWALA
- * CMPSC 122
- * SPRING 2015
- * PROF. WINSLOW
- * APRIL 3, 2015
- */
-
-
 #include "Tree2.h"
 #include <cstdlib>
 #include <iostream>
@@ -26,7 +17,7 @@ void Tree2::functionAdd()
 {
     if(!dataFile.is_open()){ dataFile.open(fileLocation, fstream::app); }
 
-    cout << endl << " *** ADD ***" << endl;
+    cout << endl << " *** AGREGAR ***" << endl;
     dataFile << endl;
     
     
@@ -44,11 +35,11 @@ void Tree2::functionAdd()
     bool firstTime = true;
     do{
         if (firstTime){
-        cout << " Enter the Name of Car:  ";
+        cout << " Introduzca el nombre del coche:  ";
         cin.ignore();
         getline(cin, mycar1.nameOfCar);
         dataFile << mycar1.nameOfCar << ", ";
-        cout << " Enter its attributes:  " << endl; }
+        cout << " Introduzca sus atributos:  " << endl; }
         
         getline(cin, mycar1.attribute);        
         dataFile << mycar1.attribute << ", ";
@@ -56,7 +47,7 @@ void Tree2::functionAdd()
         firstTime = false;
     }while(!mycar1.attribute.empty());
    
-    cout << " Car Successfully Added to the system " << endl;
+    cout << " Coche agregado con exito al sistema " << endl;
     cout << " myVec's size is " << myVec.size() << endl;
     
 }
@@ -64,7 +55,7 @@ void Tree2::functionAdd()
 void Tree2::hasFeature()
 {
      cout << " myVec's size is " << myVec.size() << endl;
-     cout << " Has Feature: ";
+     cout << " Tiene la característica: ";
      cin >> hFeature;
     for (int i=0; i<myVec.size(); i++)
     {
@@ -73,7 +64,7 @@ void Tree2::hasFeature()
     {
        foundCar = myVec[i].nameOfCar;
     
-    cout << " " << foundCar << " has this feature" << endl;
+    cout << " " << foundCar << " tiene esta caracteristica" << endl;
     
     }
     }

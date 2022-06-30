@@ -1,12 +1,3 @@
-/* 
- * PARTH BHOIWALA
- * CMPSC 122
- * SPRING 2015
- * PROF. WINSLOW
- * APRIL 3, 2015
- */
-
-
 #include "Tree.h"
 #include "Tree2.h"      // <-- Useless
 #include <cstdlib>
@@ -35,7 +26,7 @@ void Tree::loadFile() {
     
     string trash;
 #ifdef DEBUG
-    cout << " entered loadFile " << endl;
+    cout << " introducido loadFile " << endl;
 #endif
     //    carInfo myOldCar;    
     if(dataFileRead.fail()) {
@@ -53,24 +44,24 @@ void Tree::loadFile() {
 //        getline(dataFileRead, trash, ' ');
         myOldCar.nameCar = lowerCase(myOldCar.nameCar);     
 #ifdef DEBUG
-       cout << " got the name " << myOldCar.nameCar << endl;
+       cout << " tiene el nombre " << myOldCar.nameCar << endl;
 #endif  
         getline(dataFileRead, myOldCar.attribute, '\n');
         myOldCar.attribute = lowerCase(myOldCar.attribute);     /// Reads All Attributes from line
 #ifdef DEBUG
-       cout << " all attrs are :" << myOldCar.attribute << endl;
+       cout << " todos los atrs son :" << myOldCar.attribute << endl;
 #endif  
         string attrOne;
       
         do{ 
             attrOne = myOldCar.attribute.substr(0, myOldCar.attribute.find(","));       /// Separates each attribute
 #ifdef DEBUG
-            cout << " piece: " << attrOne << endl;    
+            cout << " pieza: " << attrOne << endl;    
 #endif 
             myOldCar.VecAttribute.push_back(attrOne); 
             myOldCar.attribute.erase(0, attrOne.length()+1);
 #ifdef DEBUG
-            cout << " after erasing, what's left is " << myOldCar.attribute << endl;
+            cout << " después de borrar, lo que queda es " << myOldCar.attribute << endl;
 #endif          
         }while(attrOne.length() != 0);
         
@@ -80,7 +71,7 @@ void Tree::loadFile() {
 #ifdef DEBUG
     for (int i=0; i<myVec.size(); i++)
     {
-        cout << endl << " Car is " << myVec[i].nameCar << endl;
+        cout << endl << " El coche es " << myVec[i].nameCar << endl;
         cout << endl << " myVec[i].VecAttribue[j] has: " << endl;
         //cout << endl << " int i = " << i << endl;
         for (int j=0; j<myVec[i].VecAttribute.size(); j++)
@@ -99,10 +90,10 @@ void Tree::askInfo()
     carInfo myNewCar;
     cout << endl;
     cout << " ******************************" << endl;
-    cout << "        *** ADD MODE ***       " << endl;
+    cout << "        *** MODO AGREGAR ***       " << endl;
     cout << endl; 
     dataFile << endl;
-     cout << " Enter the name of the Car: ";    /// Get the name of the car
+     cout << " Introduzca el nombre del coche: ";    /// Get the name of the car
     cin.ignore();
     //cin >> newCar;
     getline(cin, myNewCar.nameCar);//, '\n');  
@@ -113,7 +104,7 @@ void Tree::askInfo()
     //insertCar(root, myNewCar.nameCar);
     //Print(dataFile, root);
     
-    cout << " Enter it's attributes: " << endl;  /// Get its attributes
+    cout << " Introduzca sus atributos: " << endl;  /// Get its attributes
     //TreeNode* ptrToName;
     //ptrToName = myNewCar.nameCar;
     do{
@@ -144,7 +135,7 @@ void Tree::askInfo()
         }
     } 
 #endif
-    cout << "    Car Successfully Added!    " << endl;
+    cout << "    Coche agregado con exito!    " << endl;
     cout << " ******************************" << endl;
    // cout << endl;
     cout << endl;
@@ -155,7 +146,7 @@ void Tree::askInfo()
 void Tree::insertCar(TreeNode*& tree, carInfo myNewCar2)    /// Enters the struct in to BST, takes in root ptr as ROOT
 {
 #ifdef DEBUG
-    cout << " insertCar is called" << endl;  
+    cout << " insertCar se llama" << endl;  
 #endif
   if (tree == NULL)
   {                                     /// Insertion place found.
@@ -167,7 +158,7 @@ void Tree::insertCar(TreeNode*& tree, carInfo myNewCar2)    /// Enters the struc
     
  //   dataFile << tree->info << ", " ;
 #ifdef DEBUG
-    cout << " just inserted " << tree->info << " into the BST " << endl;
+    cout << " Se agrego " << tree->info << " en el BST " << endl;
 #endif
   }
   else if (myNewCar2.nameCar < tree->info)      /// If Car's Name is Smaller than node
@@ -187,19 +178,19 @@ void Tree::preCheck()                    /// SEARCH MODE
     bool terminate;                 /// Terminate Search Mode if hasfeature has only one car left
     cout << endl;
     cout << " ******************************" << endl;
-    cout << "      *** SEARCH MODE ***      " << endl;
+    cout << "      *** MODO DE BUSQUEDA ***      " << endl;
    
-    cout << " Name of the Search: ";        /// Title of Search
+    cout << " Nombre de la busqueda: ";        /// Title of Search
     cin.ignore();
     getline(cin, nameOfSearch);
-    resultFile << endl << " TITLE: " << nameOfSearch << endl << endl;
+    resultFile << endl << " TITULO: " << nameOfSearch << endl << endl;
     // cin >> nameOfSearch;
     
     while (true)                    /// Remain in Search Mode until it is terminated or user choses to quit
     {
     cout << endl;
-    cout << " How do you want to search? " << endl;
-    cout << " 'CheckAuto' or 'HasFeatures' or 'Show' or 'Exit') : ";
+    cout << " ¿Como quiere buscar? " << endl;
+    cout << " 'CheckAuto' o 'HasFeatures' o 'Show' o 'Exit') : ";
     //cin.ignore();
     getline(cin, searchChoice);
     //cin >> searchChoice;
@@ -213,7 +204,7 @@ void Tree::preCheck()                    /// SEARCH MODE
     
     else if (searchChoice == "checkauto")           /// Call CheckAuto
     {        
-     cout << " Car's Name:  ";                  /// Ask for Car to look for
+     cout << " Nombre del coche:  ";                  /// Ask for Car to look for
     //cin.ignore();
     getline(cin, lookFor);
     lookFor = lowerCase(lookFor);           
@@ -235,7 +226,7 @@ void Tree::preCheck()                    /// SEARCH MODE
     
     else
     {
-        cout << " Invalid Entry " << endl;          /// Display this if User's entry is invalid
+        cout << " Entrada invalida " << endl;          /// Display this if User's entry is invalid
     }
     
     } // Exit While    
@@ -248,12 +239,12 @@ void Tree::preCheck()                    /// SEARCH MODE
 
 bool Tree::hasFeature()
 {
-    cout << " Feature: ";               /// Ask for feature to look for
+    cout << " Caracteristica: ";               /// Ask for feature to look for
     //cin.ignore();
     getline(cin, hFeature);
     hFeature = lowerCase(hFeature);
 #ifdef DEBUG
-     cout << " hFeature i have is " << hFeature << endl;
+     cout << " La caracteristica que tiene es " << hFeature << endl;
      cout << " size of myVec is " << myVec.size() << endl;
 #endif
     
@@ -261,13 +252,13 @@ bool Tree::hasFeature()
   for (int i=0; i <myVec.size();/*i++*/)    /// Loop vector to check for feature
   {
 #ifdef DEBUG
-  cout << " I am in first for loop" << endl; 
+  cout << " Estoy en el primer bucle for" << endl; 
 #endif
       bool found = false;
        for ( int j=0; j< myVec[i].VecAttribute.size(); j++)   /// check every attribute
         {
 #ifdef DEBUG  
-   cout << " Now I am in second for loop looking at - " << myVec[i].VecAttribute[j] << endl; 
+   cout << " Ahora estoy en el segundo bucle mirando - " << myVec[i].VecAttribute[j] << endl; 
 #endif
            if (hFeature == myVec[i].VecAttribute[j] && !found) /// set found to true if feature is found
             {
@@ -297,10 +288,10 @@ bool Tree::hasFeature()
   if (myVec.size() == 1)        /// If only 1 car has the feature, display it and return False
   {
       cout << endl;
-      cout << " CONGRATULATIONS !!! Car Found !!! " << endl;
-      resultFile << " CONGRATULATIONS !!! Car Found !!! " << endl;
-      cout << " Car Name: " << myVec[0].nameCar << " Is Your Car " << endl;
-      resultFile << " Car Name: " << myVec[0].nameCar << " Is Your Car " << endl;
+      cout << " ¡¡¡FELICIDADES!!! ¡¡¡Coche encontrado!!! " << endl;
+      resultFile << " ¡¡¡FELICIDADES!!! ¡¡¡Coche encontrado!!! " << endl;
+      cout << " Nombre del coche: " << myVec[0].nameCar << " Es su coche " << endl;
+      resultFile << " Nombre del coche: " << myVec[0].nameCar << " Es su coche " << endl;
       cout << " Attributes: " << endl;
       resultFile << " Attributes: " << endl;
       for (int i=0; i<myVec[0].VecAttribute.size(); i++)
@@ -438,12 +429,12 @@ void Tree::show()           /// Displays the the Cars that match the search crit
     
     if (myVec.empty())
     {
-        cout << " Sorry! No Cars Match Your Search Criteria " << endl;
+        cout << " ¡Lo sentimos! No hay coches que coincidan con sus criterios de busqueda " << endl;
     }
     else{ 
         
-    cout << " Cars that match your search criteria are: " << endl;
-    resultFile << endl << " Show: " << endl << " Cars that match your search criteria are: " << endl;
+    cout << " Los coches que coinciden con sus criterios de busqueda son: " << endl;
+    resultFile << endl << " Show: " << endl << " Los coches que coinciden con sus criterios de busqueda son: " << endl;
     for (int i = 0; i < myVec.size(); i++)
     {
         cout << " " << i+1 << ".  " << myVec[i].nameCar << endl;

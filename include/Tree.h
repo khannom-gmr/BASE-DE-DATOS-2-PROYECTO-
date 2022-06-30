@@ -1,12 +1,3 @@
-/* 
- * PARTH BHOIWALA
- * CMPSC 122
- * SPRING 2015
- * PROF. WINSLOW
- * APRIL 3, 2015
- */
-
-
 #ifndef TREE_H
 #define	TREE_H
 
@@ -18,82 +9,82 @@
 #define resultLocation "results.txt"
 using namespace std;
 
-struct TreeNode         /// Makes the Binary Search Tree
+struct TreeNode         /// Hace el árbol de búsqueda binaria
     {
-    string info;            /// Holds Name of Car
-    TreeNode* left;         /// Left pointer
-    TreeNode* right;        /// Right pointer
+    string info;            /// Contiene el nombre del coche
+    TreeNode* left;         /// Puntero izquierdo
+    TreeNode* right;        /// Puntero derecho
     };
 
 class Tree {    
 public:
     Tree();             /// Constructor
     
-    struct carInfo{       /// store Car's info in struct
+    struct carInfo{       /// almacenar la información del coche en la estructura
         string nameCar;
         string attribute;
-       vector <string> VecAttribute;    /// All the attributes (size is unknown)
+       vector <string> VecAttribute;    /// Todos los atributos (el tamaño es desconocido)
         //string attribute;        
     };
      vector <carInfo> myVec;
      
  //    vector <string> VecAttribute;
     // carInfo myNewCar;
-     carInfo searchCars;                /// struct of carInfo type
+     carInfo searchCars;                /// struct de tipo carInfo
      vector <carInfo> matchingCars;  /// <- Useless
     
     //string newCar;
     //string attribute;
-    ifstream dataFileRead;                  /// File that stores info of cars "autodata.txt"
+    ifstream dataFileRead;                  /// Archivo que almacena la información de los coches "autodata.txt"
     ofstream dataFile;
-    ofstream resultFile;                /// File for user "result.txt"
+    ofstream resultFile;                /// Archivo para el usuario "result.txt"
   
     void insertCar(TreeNode*& tree, carInfo myNewCar2);    
-    /// Function: Inserts car's info into BST
-    /// Pre: Tree is Empty
-    /// Post: Tree holds car info in a form of BST
+    /// Función: Inserta la información del coche en el BST
+    /// Pre: El árbol está vacío
+    /// Post: El árbol contiene la información del coche en forma de BST
     
     void askInfo();
-    /// Function: Ask User for Name of Car and its Attributes
-    /// Pre: nothing
-    /// Post: User enters Car's Info
+    /// Función: Preguntar al usuario el nombre del coche y sus atributos
+    /// Pre: nada
+    /// Post: El usuario introduce la información del coche
     
     void loadFile();
-    /// Function: Load the file if it exits
-    /// Pre: Check if file exits
-    /// Post: If so, then load data into data structure
+    /// Función: Cargar el archivo si sale
+    /// Pre: Comprobar si el archivo sale
+    /// Post: Si es así, entonces carga los datos en la estructura de datos
     
     void checkAuto(TreeNode*& tree, string lookFor) ;
-    /// Function: Uses BST to look for car's name
-    /// Pre: BST is there, ask for car's name
-    /// Post: Looks up the car and displays its attributes if found
+    /// Función: Utiliza el BST para buscar el nombre del coche
+    /// Pre: El BST está ahí, pregunta por el nombre del coche
+    /// Post: Busca el coche y muestra sus atributos si lo encuentra
     
     bool hasFeature();
-    /// Function: Uses vectors to look for car's attributes (traverses entire structure)
-    /// Pre: vector has data
-    /// Post: eliminates cars that don't have that attribute
+    /// Función: Utiliza los vectores para buscar los atributos del coche (recorre toda la estructura)
+    /// Pre: el vector tiene datos
+    /// Post: elimina los coches que no tienen ese atributo
     
     void preCheck();
-    /// Function: Enters search mode
-    /// Pre: Ask user to call either of those functions
-    /// Post: Call appropriate function
+    /// Función: Entra en el modo de búsqueda
+    /// Pre: Pide al usuario que llame a cualquiera de esas funciones
+    /// Post: Llama a la función apropiada
     
     void show();
-    /// Function: Shows name of cars
-    /// Pre: nothing
-    /// Post: displays names of cars that match the criteria
+    /// Función: Muestra el nombre de los coches
+    /// Pre: nada
+    /// Post: muestra los nombres de los coches que coinciden con los criterios
     
     void reset();
-    /// Function: Resets the structure before exiting search mode
-    /// Pre: structure has been initialized
-    /// Post: structure is reset & updated
+    /// Función: Restablece la estructura antes de salir del modo de búsqueda
+    /// Pre: la estructura ha sido inicializada
+    /// Post: la estructura se restablece y se actualiza
     
    string lowerCase(string lowerCase);
-   /// Function: Convert string to lowercase
-   /// Pre: get the string
-   /// Post: return converted lowercased string
+   /// Función: Convertir la cadena a minúsculas
+   /// Pre: obtener la cadena
+   /// Post: devuelve la cadena convertida a minúsculas
     
-   /// SOME TRASH CODE BELOW
+   /// UN POCO DE CÓDIGO BASURA A CONTINUACIÓN
    //void insertAttribute(TreeNode* tree, string something2);      
    //void Print(ofstream& dataFile, TreeNode* tree);     
    //void insertCar(TreeNode* tree, TreeNode* newnode);
@@ -101,10 +92,10 @@ public:
     
     TreeNode* ptrToSearch;      /// <- Useless
     TreeNode* root;             /// root node
-    string lookFor;             /// look for car
-    string hFeature;            /// feature to look for
-    string nameOfSearch;        /// title of search
-    string searchChoice;        /// search mode choice
+    string lookFor;             /// buscar coche
+    string hFeature;            /// característica a buscar
+    string nameOfSearch;        /// título de la búsqueda
+    string searchChoice;        /// elección del modo de búsqueda
     
 
  

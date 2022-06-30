@@ -1,12 +1,3 @@
-/* 
- * PARTH BHOIWALA
- * CMPSC 122
- * SPRING 2015
- * PROF. WINSLOW
- * APRIL 3, 2015
- */
-
-
 #ifndef TREE2_H
 #define	TREE2_H
 
