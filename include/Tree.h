@@ -4,7 +4,7 @@
 #include <string>
 #include <fstream>
 #include <vector>
-#define fileLocation "autodata.txt"
+#define fileLocation "tabdata.txt"
 #define resultLocation "results.txt"
 
 using namespace std;
