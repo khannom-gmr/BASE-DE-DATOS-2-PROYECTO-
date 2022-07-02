@@ -51,7 +51,6 @@ public:
     void reset();
     
    string lowerCase(string lowerCase);
-
    
     TreeNode* ptrToSearch;   
     TreeNode* root;          
