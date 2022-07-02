@@ -12,19 +12,19 @@ using namespace std;
 void displayInst();
 
 
-/* IMPORTANT INFORMATION FOR THE CLIENT/USER
+/* INFORMACIÓN IMPORTANTE PARA EL CLIENTE/USUARIO
  *
-  --> If you choose to load your text file, Then Make sure that it does not have a space 
- *    after the comma. If you do have a space after a comma then the getline function 
- *    won't get the data properly and will cause error in search mode.
+  --> Si elige cargar su archivo de texto, entonces asegúrese de que no tenga un espacio 
+ * después de la coma. Si tiene un espacio después de la coma entonces la función getline 
+ * no obtendrá los datos correctamente y causará un error en el modo de búsqueda.
  * 
-  --> The class called "Tree2.cpp" and "Tree2.h" don't do anything. So Ignore Them.
+  --> La clase llamada "Tree2.cpp" y "Tree2.h" no hacen nada. Así que ignóralos.
  *    
  * 
-  --> There's a lot of useless code that I've commented out. Also Ignore Them.
- *    I call them trash code. I didn't delete them b/c it might be useful someday.
+  --> Hay un montón de código inútil que he comentado. También ignóralos.
+ * Los llamo código basura. No los he borrado porque podrían ser útiles algún día.
  *  
-  --> All comments that describe my code begin with 3 slashes '///'
+  --> Todos los comentarios que describen mi código comienzan con 3 barras '///'
  * 
  */
 
