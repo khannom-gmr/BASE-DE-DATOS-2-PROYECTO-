@@ -64,8 +64,7 @@ int main(int argc, char** argv) {
         menuChoice = fcnCallerOld.lowerCase(menuChoice);
         
         cout << endl;
-    
-    //    Tree2 fcnCaller;
+
         if (menuChoice == "1" || menuChoice == "add") // ADD A NEW CAR
         {        
             //fcnCaller.functionAdd();

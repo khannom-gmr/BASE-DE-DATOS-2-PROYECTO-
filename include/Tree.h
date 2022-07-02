@@ -5,15 +5,15 @@
 #include <fstream>
 #include <vector>
 #define fileLocation "autodata.txt"
-//#define fileLocation "D:\\CSc\\SPRING SEMESTER\\MID-TERM PROJECT\\CarDealerProgram\\autodata.txt"
 #define resultLocation "results.txt"
+
 using namespace std;
 
 struct TreeNode         /// Hace el árbol de búsqueda binaria
     {
-    string info;            /// Contiene el nombre del coche
-    TreeNode* left;         /// Puntero izquierdo
-    TreeNode* right;        /// Puntero derecho
+        string info;            /// Contiene el nombre del coche
+        TreeNode* left;         /// Puntero izquierdo
+        TreeNode* right;        /// Puntero derecho
     };
 
 class Tree {    
@@ -23,12 +23,12 @@ public:
     struct carInfo{       /// almacenar la información del coche en la estructura
         string nameCar;
         string attribute;
-       vector <string> VecAttribute;    /// Todos los atributos (el tamaño es desconocido)
+        vector <string> VecAttribute;    /// Todos los atributos (el tamaño es desconocido)
         //string attribute;        
     };
      vector <carInfo> myVec;
      
- //    vector <string> VecAttribute;
+    // vector <string> VecAttribute;
     // carInfo myNewCar;
      carInfo searchCars;                /// struct de tipo carInfo
      vector <carInfo> matchingCars;  /// <- Useless
@@ -83,30 +83,18 @@ public:
    /// Función: Convertir la cadena a minúsculas
    /// Pre: obtener la cadena
    /// Post: devuelve la cadena convertida a minúsculas
-    
-   /// UN POCO DE CÓDIGO BASURA A CONTINUACIÓN
-   //void insertAttribute(TreeNode* tree, string something2);      
-   //void Print(ofstream& dataFile, TreeNode* tree);     
-   //void insertCar(TreeNode* tree, TreeNode* newnode);
-   //void insertCar(TreeNode* tree, string something);
-    
+   
     TreeNode* ptrToSearch;      /// <- Useless
     TreeNode* root;             /// root node
     string lookFor;             /// buscar coche
     string hFeature;            /// característica a buscar
     string nameOfSearch;        /// título de la búsqueda
     string searchChoice;        /// elección del modo de búsqueda
-    
-
- 
-    
-    
-    
+       
     ~Tree();
 private:
- 
     //TreeNode* root;
     TreeNode* passTree; /// <- Useless
 };
 
-#endif	/* TREE_H */
+#endif
