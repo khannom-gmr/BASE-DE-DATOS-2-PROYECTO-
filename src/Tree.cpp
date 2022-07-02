@@ -24,73 +24,73 @@ void Tree::loadFile() {
 
 void Tree::askInfo()
 {
-    carInfo myNewCar;
+    tabInfo myNewTab;
     cout << endl;
     cout << " ******************************" << endl;
     cout << "        *** MODO AGREGAR ***       " << endl;
     cout << endl; 
     dataFile << endl;
-     cout << " Introduzca el nombre del coche: ";    /// Obtener el nombre del coche
+     cout << " Introduzca el nombre del tabla: ";    /// Obtener el nombre del tabla
     cin.ignore();
     //cin >> newCar;
-    getline(cin, myNewCar.nameCar);//, '\n');  
-    dataFile << myNewCar.nameCar << ",";   /// Envíalo al archivo
-    //myNewCar.border = "*";
-    myNewCar.nameCar = lowerCase(myNewCar.nameCar); /// Guárdelo en la estructura
+    getline(cin, myNewTab.nameTab);//, '\n');  
+    dataFile << myNewTab.nameTab << ",";   /// Envíalo al archivo
+    //myNewTab.border = "*";
+    myNewTab.nameTab = lowerCase(myNewTab.nameTab); /// Guárdelo en la estructura
     
-    //insertCar(root, myNewCar.nameCar);
+    //insertTab(root, myNewTab.nameTab);
     //Print(dataFile, root);
     
     cout << " Introduzca sus atributos: " << endl;  /// Obtener sus atributos
     //TreeNode* ptrToName;
-    //ptrToName = myNewCar.nameCar;
+    //ptrToName = myNewTab.nameTab;
     do{
         //cin.ignore(); 
     cout << "                        ";
-        getline(cin, myNewCar.attribute);
-        dataFile << myNewCar.attribute << ",";               
-        myNewCar.attribute = lowerCase(myNewCar.attribute); 
-                   //insertAttribute(root, myNewCar.attribute);          
-                   //insertCar(root, myNewCar.attribute); 
-        myNewCar.VecAttribute.push_back(myNewCar.attribute); /// Almacenarla en el vector de atributos
+        getline(cin, myNewTab.attribute);
+        dataFile << myNewTab.attribute << ",";               
+        myNewTab.attribute = lowerCase(myNewTab.attribute); 
+                   //insertAttribute(root, myNewTab.attribute);          
+                   //insertTab(root, myNewTab.attribute); 
+        myNewTab.VecAttribute.push_back(myNewTab.attribute); /// Almacenarla en el vector de atributos
          
-    }while(!myNewCar.attribute.empty()); /// Bucle hasta que llegue a 'endline'
-     myVec.push_back(myNewCar);     /// vector push_back
+    }while(!myNewTab.attribute.empty()); /// Bucle hasta que llegue a 'endline'
+     myVec.push_back(myNewTab);     /// vector push_back
     
-    insertCar(root, myNewCar);  /// Llamar a la función que puede insertar la estructura en un árbol de búsqueda binario
+    insertTab(root, myNewTab);  /// Llamar a la función que puede insertar la estructura en un árbol de búsqueda binario
 
-    cout << "    Coche agregado con exito!    " << endl;
+    cout << "    Tabla agregada con exito!    " << endl;
     cout << " ******************************" << endl;
    // cout << endl;
     cout << endl;
 }
 
-void Tree::insertCar(TreeNode*& tree, carInfo myNewCar2)    /// Introduce la estructura en el BST, toma el ptr raíz como ROOT
+void Tree::insertTab(TreeNode*& tree, tabInfo myNewTab2)    /// Introduce la estructura en el BST, toma el ptr raíz como ROOT
 {
     if (tree == NULL)
-    {                                     /// Lugar de inserción encontrado.
+    {                                     /// Lugar de inserción encontrada.
         tree = new TreeNode;
         tree->right = NULL;                /// Poner el puntero izquierdo y derecho en NULL
         tree->left = NULL;
         //tree->info = newnode->info;
-        tree->info = myNewCar2.nameCar;   /// Establecer el nodo como el nombre del coche (CheckAutoFunction)
+        tree->info = myNewTab2.nameTab;   /// Establecer el nodo como el nombre del tabla (checkTabFunction)
         
         //   dataFile << tree->info << ", " ;
     }
-    else if (myNewCar2.nameCar < tree->info)      /// Si el nombre del coche es más pequeño que el nodo
+    else if (myNewTab2.nameTab < tree->info)      /// Si el nombre del tabla es más pequeño que el nodo
     { 
-        insertCar(tree->left, myNewCar2);    /// Insertar en el subárbol izquierdo
+        insertTab(tree->left, myNewTab2);    /// Insertar en el subárbol izquierdo
     }
-    else                                          /// Si el nombre del coche es mayor que el nodo
+    else                                          /// Si el nombre del tabla es mayor que el nodo
     {
-        insertCar(tree->right, myNewCar2);   /// Insertar en el subárbol derecho
+        insertTab(tree->right, myNewTab2);   /// Insertar en el subárbol derecho
     }
 }
 
 void Tree::preCheck()                    /// SEARCH MODE
 {
-    string lookFor;                 /// Coche para buscar en checkAuto
-    bool terminate;                 /// Terminar el modo de búsqueda si a hasfeature sólo le queda un coche
+    string lookFor;                 /// tabla para buscar en checkTab
+    bool terminate;                 /// Terminar el modo de búsqueda si a hasfeature sólo le queda un tabla
     cout << endl;
     cout << " ******************************" << endl;
     cout << "      *** MODO DE BUSQUEDA ***      " << endl;
@@ -105,7 +105,7 @@ void Tree::preCheck()                    /// SEARCH MODE
     {
         cout << endl;
         cout << " ¿Como quiere buscar? " << endl;
-        cout << " 'CheckAuto' o 'HasFeatures' o 'Show' o 'Exit') : ";
+        cout << " 'checkTab' o 'HasFeatures' o 'Show' o 'Exit') : ";
         //cin.ignore();
         getline(cin, searchChoice);
         //cin >> searchChoice;
@@ -117,15 +117,15 @@ void Tree::preCheck()                    /// SEARCH MODE
             break;
         }    
         
-        else if (searchChoice == "checkauto")           /// Llamar a CheckAuto
+        else if (searchChoice == "checkTab")           /// Llamar a checkTab
         {        
-        cout << " Nombre del coche:  ";                  /// Pregunte por el coche para buscar
+        cout << " Nombre de la tabla:  ";                  /// Pregunte por el tabla para buscar
         //cin.ignore();
         getline(cin, lookFor);
         lookFor = lowerCase(lookFor);           
             
-        checkAuto(root, lookFor);           
-        //checkAuto(ptrToSearch, lookFor);          /// <- Useless
+        checkTab(root, lookFor);           
+        //checkTab(ptrToSearch, lookFor);          /// <- Useless
         }
         else if (searchChoice == "hasfeatures" || searchChoice == "hasfeature")         /// Llamar a hasFeature
         {
@@ -135,7 +135,7 @@ void Tree::preCheck()                    /// SEARCH MODE
                 break; 
             }     
         }
-        else if (searchChoice == "show" || searchChoice == "Show")          /// Mostrar los coches que actualmente coinciden con los criterios
+        else if (searchChoice == "show" || searchChoice == "Show")          /// Mostrar los tablas que actualmente coinciden con los criterios
         {
             show();
         }
@@ -162,7 +162,7 @@ bool Tree::hasFeature()
         bool found = false;
         for ( int j=0; j< myVec[i].VecAttribute.size(); j++)   /// comprobar cada atributo
         {
-            if (hFeature == myVec[i].VecAttribute[j] && !found) /// establecer encontrado como verdadero si se encuentra la característica
+            if (hFeature == myVec[i].VecAttribute[j] && !found) /// establecer encontrada como verdadero si se encuentra la característica
                 {
                     found = true;                
                     //break;
@@ -172,7 +172,7 @@ bool Tree::hasFeature()
                 } 
             
         }
-        if (found == false)         /// Borrar el elemento (coche) si no tiene la característica
+        if (found == false)         /// Borrar el elemento (tabla) si no tiene la característica
         {
             myVec.erase(myVec.begin()+i);
             // myVec[i].VecAttribute.erase(myVec[i].VecAttribute.begin()+i);
@@ -182,13 +182,13 @@ bool Tree::hasFeature()
         }  
     }  
     
-    if (myVec.size() == 1)        /// Si sólo 1 coche tiene la característica, la muestra y devuelve False
+    if (myVec.size() == 1)        /// Si sólo 1 tabla tiene la característica, la muestra y devuelve False
     {
         cout << endl;
-        cout << " ¡¡¡FELICIDADES!!! ¡¡¡Coche encontrado!!! " << endl;
-        resultFile << " ¡¡¡FELICIDADES!!! ¡¡¡Coche encontrado!!! " << endl;
-        cout << " Nombre del coche: " << myVec[0].nameCar << " Es su coche " << endl;
-        resultFile << " Nombre del coche: " << myVec[0].nameCar << " Es su coche " << endl;
+        cout << " ¡¡¡FELICIDADES!!! ¡¡¡tabla encontrada!!! " << endl;
+        resultFile << " ¡¡¡FELICIDADES!!! ¡¡¡tabla encontrada!!! " << endl;
+        cout << " Nombre del tabla: " << myVec[0].nameTab << " Es su tabla " << endl;
+        resultFile << " Nombre del tabla: " << myVec[0].nameTab << " Es su tabla " << endl;
         cout << " Attributes: " << endl;
         resultFile << " Attributes: " << endl;
         for (int i=0; i<myVec[0].VecAttribute.size(); i++)
@@ -196,27 +196,27 @@ bool Tree::hasFeature()
             cout << " " << myVec[0].VecAttribute[i] << endl;
             resultFile << " " << myVec[0].VecAttribute[i] << endl;
         }
-        return false; // Falso significa que no hay más coches que buscar = TERMINAR
+        return false; // Falso significa que no hay más tablas que buscar = TERMINAR
     }
     else 
     {
-        return true; // Verdadero significa que hay MÁS coches para buscar = NO TERMINAR
+        return true; // Verdadero significa que hay MÁS tablas para buscar = NO TERMINAR
     }
 }
 
 
-void Tree::checkAuto(TreeNode*& tree, string lookFor)      /// CheckAuto - Utiliza el árbol de búsqueda binario para buscar el coche
+void Tree::checkTab(TreeNode*& tree, string lookFor)      /// checkTab - Utiliza el árbol de búsqueda binario para buscar el tabla
 {
     if (tree != NULL)
     {
-        if (tree->info == lookFor)      /// si el nombre del coche coincide con
+        if (tree->info == lookFor)      /// si el nombre del tabla coincide con
         {
             bool displayedIt = false;
             for (int i=0; i<myVec.size(); i++)          /// mostrar sus atributos
             {
-                if (lookFor == myVec[i].nameCar)
+                if (lookFor == myVec[i].nameTab)
                 {
-                    resultFile << endl << " CheckAuto: " << endl << lookFor << endl;
+                    resultFile << endl << " checkTab: " << endl << lookFor << endl;
                     cout << " Attributes: " << endl;
                     
                     for (int j=0; j< myVec[i].VecAttribute.size(); j++)
@@ -232,41 +232,41 @@ void Tree::checkAuto(TreeNode*& tree, string lookFor)      /// CheckAuto - Utili
             
             if (!displayedIt) 
             {
-                cout << " Car Not Found " << endl;
+                cout << " Tabla no encontrada " << endl;
             }
         }
         else if (lookFor < tree->info)          /// si no, mira otro nodo (más pequeño)
         {
-            checkAuto(tree->left, lookFor);
+            checkTab(tree->left, lookFor);
         }
         else if (lookFor > tree->info)          /// si no, mira otro nodo (mayor)
         {
-            checkAuto(tree->right, lookFor);
+            checkTab(tree->right, lookFor);
         }
     }
-    else                                /// si el coche no está en el sistema
+    else                                /// si el tabla no está en el sistema
     {
-        cout << " Coche no encontrado en el Sistema " << endl;
+        cout << " tabla no encontrada en el Sistema " << endl;
         //return;
     }
     
 }
 
 
-void Tree::show()           /// Muestra los coches que coinciden con los criterios de búsqueda
+void Tree::show()           /// Muestra los tablas que coinciden con los criterios de búsqueda
 {
     if (myVec.empty())
     {
-        cout << " ¡Lo sentimos! No hay coches que coincidan con sus criterios de busqueda " << endl;
+        cout << " ¡Lo sentimos! No hay tablas que coincidan con sus criterios de busqueda " << endl;
     }
     else{ 
         
-    cout << " Los coches que coinciden con sus criterios de busqueda son: " << endl;
-    resultFile << endl << " Show: " << endl << " Los coches que coinciden con sus criterios de busqueda son: " << endl;
+    cout << " Los tablas que coinciden con sus criterios de busqueda son: " << endl;
+    resultFile << endl << " Show: " << endl << " Los tablas que coinciden con sus criterios de busqueda son: " << endl;
     for (int i = 0; i < myVec.size(); i++)
     {
-        cout << " " << i+1 << ".  " << myVec[i].nameCar << endl;
-        resultFile << " " << i+1 << ".  " << myVec[i].nameCar << endl;
+        cout << " " << i+1 << ".  " << myVec[i].nameTab << endl;
+        resultFile << " " << i+1 << ".  " << myVec[i].nameTab << endl;
     }
     cout << endl;
     resultFile << endl;
