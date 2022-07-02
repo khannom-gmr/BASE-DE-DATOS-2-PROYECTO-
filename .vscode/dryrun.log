@@ -1,0 +1,13 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make.exe: Entering directory 'c:/Users/gabri/Downloads/BASE-DE-DATOS-2-PROYECTO-'
+mkdir output
+ 
+g++ -std=c++17 -Wall -Wextra -g -Iinclude -c src/main.cpp  -o src/main.o
+ 
+g++ -std=c++17 -Wall -Wextra -g -Iinclude -c src/Tree.cpp  -o src/Tree.o
+ 
+g++ -std=c++17 -Wall -Wextra -g -Iinclude -c src/Tree2.cpp  -o src/Tree2.o
+g++ -std=c++17 -Wall -Wextra -g -Iinclude -o output\main.exe src/main.o src/Tree.o src/Tree2.o  -Llib
+echo Executing 'all' complete!
+make.exe: Leaving directory 'c:/Users/gabri/Downloads/BASE-DE-DATOS-2-PROYECTO-'
+ 
