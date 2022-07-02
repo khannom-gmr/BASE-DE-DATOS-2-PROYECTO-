@@ -4,13 +4,9 @@
 #include <iomanip>
 #include <fstream>
 #include "Tree.h"
-#include "Tree2.h"
 #include <ctype.h>
 
-
 using namespace std;
-void displayInst();
-
 
 /* INFORMACIÓN IMPORTANTE PARA EL CLIENTE/USUARIO
  *
@@ -28,67 +24,6 @@ void displayInst();
  * 
  */
 
-
-
-int main(int argc, char** argv) {
-
-    
-    cout << "       BIENVENIDO AL PROGRAMA!" << endl;
-    displayInst();
-    
-    
-    
-   string menuChoice = "0"; 
-   Tree2 fcnCaller;
-   Tree fcnCallerOld;
-   
-   fcnCallerOld.loadFile();
-   
-   
-   while (menuChoice != "3" && menuChoice != "quit" && menuChoice != "exit" )
-{
-    cout << endl << endl; 
-    cout << " ******************************" << endl;
-    cout << " ~~~~~~~~~~~~ MENU ~~~~~~~~~~~~" << endl;
-    cout << " ******************************" << endl;
-    cout << endl;
-    cout << " ¿Que le gustaria hacer? " << endl;
-    cout << " 1 - Modo Agregar (add) " << endl;
-    cout << " 2 - Modo Buscar (search) " << endl;
-    cout << " 3 - Quit (quit)" << endl;
-    cout << " Eleccion: ";
-    cin >> menuChoice;
-    menuChoice = fcnCallerOld.lowerCase(menuChoice);
-    
-    cout << endl;
-   
-//    Tree2 fcnCaller;
-    if (menuChoice == "1" || menuChoice == "add") // ADD A NEW CAR
-    {        
-        //fcnCaller.functionAdd();
-        fcnCallerOld.askInfo();
-    }
-    else if (menuChoice == "2" || menuChoice == "search") // SEARCH
-    {           //fcnCaller.hasFeature();
-           fcnCallerOld.preCheck();
-    }
-    else
-    {
-        if (menuChoice != "quit" && menuChoice != "exit" && menuChoice != "3")  /// Quit
-        {
-            cout << " ¡Entrada invalida! Intentelo de nuevo " << endl;
-        }
-    }
-    
-   
-}
-    
-    
-   
-    
-    return 0;
-}
-
 void displayInst()
 {
     cout << "  Este programa tiene dos caracteristicas: " << endl;
@@ -98,7 +33,56 @@ void displayInst()
     cout << "   ~ CHECKAUTO: Buscar un coche por su nombre " << endl;
     cout << "   ~ SHOW: Mostrar los coches que coinciden con sus criterios" << endl;
     cout << "   ~ Estas funciones solo funcionaran en BUSCAR" << endl;
-    cout << "  El menú de usuario aceptará 'palabras' y 'numeros'"  << endl;
+    cout << "  El menu de usuario aceptara 'palabras' y 'numeros'"  << endl;
     cout << "  El programa no distingue entre mayusculas y minusculas " << endl;
-
 }
+
+
+int main(int argc, char** argv) {
+
+    cout << "       BIENVENIDO AL PROGRAMA!" << endl;
+    displayInst();
+        
+    string menuChoice = "0"; 
+    Tree fcnCallerOld;
+    
+    fcnCallerOld.loadFile();
+      
+    while (menuChoice != "3" && menuChoice != "quit" && menuChoice != "exit" )
+    {
+        cout << endl << endl; 
+        cout << " ******************************" << endl;
+        cout << " ~~~~~~~~~~~~ MENU ~~~~~~~~~~~~" << endl;
+        cout << " ******************************" << endl;
+        cout << endl;
+        cout << " Que le gustaria hacer? " << endl;
+        cout << " 1 - Modo Agregar (add) " << endl;
+        cout << " 2 - Modo Buscar (search) " << endl;
+        cout << " 3 - Quit (quit)" << endl;
+        cout << " Eleccion: ";
+        cin >> menuChoice;
+        menuChoice = fcnCallerOld.lowerCase(menuChoice);
+        
+        cout << endl;
+
+        if (menuChoice == "1" || menuChoice == "add") // ADD A NEW CAR
+        {        
+            //fcnCaller.functionAdd();
+            fcnCallerOld.askInfo();
+        }
+        else if (menuChoice == "2" || menuChoice == "search") // SEARCH
+        {           //fcnCaller.hasFeature();
+            fcnCallerOld.preCheck();
+        }
+        else
+        {
+            if (menuChoice != "quit" && menuChoice != "exit" && menuChoice != "3")  /// Quit
+            {
+                cout << " ¡Entrada invalida! Intentelo de nuevo " << endl;
+            }
+        }
+    }
+    
+    return 0;
+}
+

@@ -5,64 +5,64 @@
 #include <fstream>
 #include <vector>
 #define fileLocation "autodata.txt"
-//#define fileLocation "D:\\CSc\\SPRING SEMESTER\\MID-TERM PROJECT\\CarDealerProgram\\autodata.txt"
 #define resultLocation "results.txt"
+
 using namespace std;
 
 struct TreeNode         /// Hace el árbol de búsqueda binaria
     {
-    string info;            /// Contiene el nombre del coche
-    TreeNode* left;         /// Puntero izquierdo
-    TreeNode* right;        /// Puntero derecho
+        string info;            /// Contiene el nombre de la tabla
+        TreeNode* left;         /// Puntero izquierdo
+        TreeNode* right;        /// Puntero derecho
     };
 
 class Tree {    
 public:
     Tree();             /// Constructor
     
-    struct carInfo{       /// almacenar la información del coche en la estructura
-        string nameCar;
+    struct tabInfo{       /// almacenar la información de la tabla en la estructura
+        string nameTab;
         string attribute;
-       vector <string> VecAttribute;    /// Todos los atributos (el tamaño es desconocido)
+        vector <string> VecAttribute;    /// Todos los atributos (el tamaño es desconocido)
         //string attribute;        
     };
-     vector <carInfo> myVec;
+     vector <tabInfo> myVec;
      
- //    vector <string> VecAttribute;
-    // carInfo myNewCar;
-     carInfo searchCars;                /// struct de tipo carInfo
-     vector <carInfo> matchingCars;  /// <- Useless
+    // vector <string> VecAttribute;
+    // tabInfo myNewCar;
+     tabInfo searchTabs;                /// struct de tipo tabInfo
+     vector <tabInfo> matchingTabs;  /// <- Useless
     
     //string newCar;
     //string attribute;
-    ifstream dataFileRead;                  /// Archivo que almacena la información de los coches "autodata.txt"
+    ifstream dataFileRead;                  /// Archivo que almacena la información de las tablas "autodata.txt"
     ofstream dataFile;
     ofstream resultFile;                /// Archivo para el usuario "result.txt"
   
-    void insertCar(TreeNode*& tree, carInfo myNewCar2);    
-    /// Función: Inserta la información del coche en el BST
+    void insertTab(TreeNode*& tree, tabInfo myNewTab2);    
+    /// Función: Inserta la información de la tabla en el BST
     /// Pre: El árbol está vacío
-    /// Post: El árbol contiene la información del coche en forma de BST
+    /// Post: El árbol contiene la información de la tabla en forma de BST
     
     void askInfo();
-    /// Función: Preguntar al usuario el nombre del coche y sus atributos
+    /// Función: Preguntar al usuario el nombre de la tabla y sus atributos
     /// Pre: nada
-    /// Post: El usuario introduce la información del coche
+    /// Post: El usuario introduce la información de la tabla
     
     void loadFile();
     /// Función: Cargar el archivo si sale
     /// Pre: Comprobar si el archivo sale
     /// Post: Si es así, entonces carga los datos en la estructura de datos
     
-    void checkAuto(TreeNode*& tree, string lookFor) ;
-    /// Función: Utiliza el BST para buscar el nombre del coche
-    /// Pre: El BST está ahí, pregunta por el nombre del coche
-    /// Post: Busca el coche y muestra sus atributos si lo encuentra
+    void checkTab(TreeNode*& tree, string lookFor) ;
+    /// Función: Utiliza el BST para buscar el nombre de la tabla
+    /// Pre: El BST está ahí, pregunta por el nombre de la tabla
+    /// Post: Busca la tabla y muestra sus atributos si lo encuentra
     
     bool hasFeature();
-    /// Función: Utiliza los vectores para buscar los atributos del coche (recorre toda la estructura)
+    /// Función: Utiliza los vectores para buscar los atributos de la tabla (recorre toda la estructura)
     /// Pre: el vector tiene datos
-    /// Post: elimina los coches que no tienen ese atributo
+    /// Post: elimina las tablas que no tienen ese atributo
     
     void preCheck();
     /// Función: Entra en el modo de búsqueda
@@ -70,9 +70,9 @@ public:
     /// Post: Llama a la función apropiada
     
     void show();
-    /// Función: Muestra el nombre de los coches
+    /// Función: Muestra el nombre de las tablas
     /// Pre: nada
-    /// Post: muestra los nombres de los coches que coinciden con los criterios
+    /// Post: muestra los nombres de las tablas que coinciden con los criterios
     
     void reset();
     /// Función: Restablece la estructura antes de salir del modo de búsqueda
@@ -83,30 +83,18 @@ public:
    /// Función: Convertir la cadena a minúsculas
    /// Pre: obtener la cadena
    /// Post: devuelve la cadena convertida a minúsculas
-    
-   /// UN POCO DE CÓDIGO BASURA A CONTINUACIÓN
-   //void insertAttribute(TreeNode* tree, string something2);      
-   //void Print(ofstream& dataFile, TreeNode* tree);     
-   //void insertCar(TreeNode* tree, TreeNode* newnode);
-   //void insertCar(TreeNode* tree, string something);
-    
+   
     TreeNode* ptrToSearch;      /// <- Useless
     TreeNode* root;             /// root node
-    string lookFor;             /// buscar coche
+    string lookFor;             /// buscar tabla
     string hFeature;            /// característica a buscar
     string nameOfSearch;        /// título de la búsqueda
     string searchChoice;        /// elección del modo de búsqueda
-    
-
- 
-    
-    
-    
+       
     ~Tree();
 private:
- 
     //TreeNode* root;
     TreeNode* passTree; /// <- Useless
 };
 
-#endif	/* TREE_H */
+#endif
