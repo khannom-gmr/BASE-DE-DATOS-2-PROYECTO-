@@ -4,7 +4,6 @@
 #include <iomanip>
 #include <fstream>
 #include "Tree.h"
-#include "Tree2.h"
 #include <ctype.h>
 
 
@@ -39,7 +38,6 @@ int main(int argc, char** argv) {
     
     
    string menuChoice = "0"; 
-   Tree2 fcnCaller;
    Tree fcnCallerOld;
    
    fcnCallerOld.loadFile();

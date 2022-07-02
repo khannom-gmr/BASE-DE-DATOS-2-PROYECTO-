@@ -30,3 +30,16 @@ motor diesel 12 litros
 franjas de carreras
 rrra
 
+
+ TITULO: MacLaren
+
+
+ CheckAuto: 
+maclaren
+fibra de carbono
+0 km
+de 0 a 100km en 3.2 segundos
+aceleraci¢n 50 km/seg
+color blanck/orange
+price 300 000 usd
+
