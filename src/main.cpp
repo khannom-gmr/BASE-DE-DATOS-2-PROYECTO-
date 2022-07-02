@@ -8,30 +8,14 @@
 
 using namespace std;
 
-/* INFORMACIÓN IMPORTANTE PARA EL CLIENTE/USUARIO
- *
-  --> Si elige cargar su archivo de texto, entonces asegúrese de que no tenga un espacio 
- * después de la coma. Si tiene un espacio después de la coma entonces la función getline 
- * no obtendrá los datos correctamente y causará un error en el modo de búsqueda.
- * 
-  --> La clase llamada "Tree2.cpp" y "Tree2.h" no hacen nada. Así que ignóralos.
- *    
- * 
-  --> Hay un montón de código inútil que he comentado. También ignóralos.
- * Los llamo código basura. No los he borrado porque podrían ser útiles algún día.
- *  
-  --> Todos los comentarios que describen mi código comienzan con 3 barras '///'
- * 
- */
-
 void displayInst()
 {
     cout << "  Este programa tiene dos caracteristicas: " << endl;
-    cout << "  ADD: Agregara informacion de su coche al archivo " << endl;
-    cout << "  SEARCH: Buscara el mejor coche para usted " << endl;
-    cout << "   ~ HASFEATURE: Buscar un coche por su atributo " << endl;
-    cout << "   ~ CHECKAUTO: Buscar un coche por su nombre " << endl;
-    cout << "   ~ SHOW: Mostrar los coches que coinciden con sus criterios" << endl;
+    cout << "  ADD: Agregara informacion de su tabla al archivo " << endl;
+    cout << "  SEARCH: Buscara la tabla " << endl;
+    cout << "   ~ HASFEATURE: Buscar una tabla por su atributo " << endl;
+    cout << "   ~ CHECKAUTO: Buscar una tabla por su nombre " << endl;
+    cout << "   ~ SHOW: Mostrar las tablas que coinciden con sus criterios" << endl;
     cout << "   ~ Estas funciones solo funcionaran en BUSCAR" << endl;
     cout << "  El menu de usuario aceptara 'palabras' y 'numeros'"  << endl;
     cout << "  El programa no distingue entre mayusculas y minusculas " << endl;
@@ -65,18 +49,17 @@ int main(int argc, char** argv) {
         
         cout << endl;
 
-        if (menuChoice == "1" || menuChoice == "add") // ADD A NEW CAR
+        if (menuChoice == "1" || menuChoice == "add")
         {        
-            //fcnCaller.functionAdd();
             fcnCallerOld.askInfo();
         }
-        else if (menuChoice == "2" || menuChoice == "search") // SEARCH
-        {           //fcnCaller.hasFeature();
+        else if (menuChoice == "2" || menuChoice == "search")
+        { 
             fcnCallerOld.preCheck();
         }
         else
         {
-            if (menuChoice != "quit" && menuChoice != "exit" && menuChoice != "3")  /// Quit
+            if (menuChoice != "quit" && menuChoice != "exit" && menuChoice != "3")
             {
                 cout << " ¡Entrada invalida! Intentelo de nuevo " << endl;
             }

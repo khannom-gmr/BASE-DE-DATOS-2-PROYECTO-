@@ -11,8 +11,8 @@
 using namespace std;
 
 Tree::Tree() {    
-    root = NULL;                /// establecer la raíz como NULL
-    if(!dataFile.is_open()){ dataFile.open(fileLocation, fstream::app); }  /// Abrir los archivos de texto
+    root = NULL;
+    if(!dataFile.is_open()){ dataFile.open(fileLocation, fstream::app); }
     if (!resultFile.is_open()) { resultFile.open(resultLocation, fstream::app);}
     if (!dataFileRead.is_open()) {dataFileRead.open(fileLocation, fstream::app);}
 }
@@ -30,159 +30,139 @@ void Tree::askInfo()
     cout << "        *** MODO AGREGAR ***       " << endl;
     cout << endl; 
     dataFile << endl;
-     cout << " Introduzca el nombre del tabla: ";    /// Obtener el nombre del tabla
+    cout << " Introduzca el nombre del tabla: ";
     cin.ignore();
-    //cin >> newCar;
-    getline(cin, myNewTab.nameTab);//, '\n');  
-    dataFile << myNewTab.nameTab << ",";   /// Envíalo al archivo
-    //myNewTab.border = "*";
-    myNewTab.nameTab = lowerCase(myNewTab.nameTab); /// Guárdelo en la estructura
+
+    getline(cin, myNewTab.nameTab);
+    dataFile << myNewTab.nameTab << ",";
+
+    myNewTab.nameTab = lowerCase(myNewTab.nameTab);
     
-    //insertTab(root, myNewTab.nameTab);
-    //Print(dataFile, root);
-    
-    cout << " Introduzca sus atributos: " << endl;  /// Obtener sus atributos
-    //TreeNode* ptrToName;
-    //ptrToName = myNewTab.nameTab;
+    cout << " Introduzca sus atributos: " << endl;
     do{
-        //cin.ignore(); 
     cout << "                        ";
         getline(cin, myNewTab.attribute);
         dataFile << myNewTab.attribute << ",";               
         myNewTab.attribute = lowerCase(myNewTab.attribute); 
-                   //insertAttribute(root, myNewTab.attribute);          
-                   //insertTab(root, myNewTab.attribute); 
-        myNewTab.VecAttribute.push_back(myNewTab.attribute); /// Almacenarla en el vector de atributos
+
+        myNewTab.VecAttribute.push_back(myNewTab.attribute); 
          
-    }while(!myNewTab.attribute.empty()); /// Bucle hasta que llegue a 'endline'
-     myVec.push_back(myNewTab);     /// vector push_back
+    }while(!myNewTab.attribute.empty());
+     myVec.push_back(myNewTab);
     
-    insertTab(root, myNewTab);  /// Llamar a la función que puede insertar la estructura en un árbol de búsqueda binario
+    insertTab(root, myNewTab);
 
     cout << "    Tabla agregada con exito!    " << endl;
     cout << " ******************************" << endl;
-   // cout << endl;
     cout << endl;
 }
 
-void Tree::insertTab(TreeNode*& tree, tabInfo myNewTab2)    /// Introduce la estructura en el BST, toma el ptr raíz como ROOT
+void Tree::insertTab(TreeNode*& tree, tabInfo myNewTab2)
 {
     if (tree == NULL)
-    {                                     /// Lugar de inserción encontrada.
+    {   
         tree = new TreeNode;
-        tree->right = NULL;                /// Poner el puntero izquierdo y derecho en NULL
+        tree->right = NULL; 
         tree->left = NULL;
-        //tree->info = newnode->info;
-        tree->info = myNewTab2.nameTab;   /// Establecer el nodo como el nombre del tabla (checkTabFunction)
-        
-        //   dataFile << tree->info << ", " ;
+
+        tree->info = myNewTab2.nameTab;
     }
-    else if (myNewTab2.nameTab < tree->info)      /// Si el nombre del tabla es más pequeño que el nodo
+    else if (myNewTab2.nameTab < tree->info)
     { 
-        insertTab(tree->left, myNewTab2);    /// Insertar en el subárbol izquierdo
+        insertTab(tree->left, myNewTab2);
     }
-    else                                          /// Si el nombre del tabla es mayor que el nodo
+    else  
     {
-        insertTab(tree->right, myNewTab2);   /// Insertar en el subárbol derecho
+        insertTab(tree->right, myNewTab2);
     }
 }
 
-void Tree::preCheck()                    /// SEARCH MODE
+void Tree::preCheck()
 {
-    string lookFor;                 /// tabla para buscar en checkTab
-    bool terminate;                 /// Terminar el modo de búsqueda si a hasfeature sólo le queda un tabla
+    string lookFor;
+    bool terminate;
     cout << endl;
     cout << " ******************************" << endl;
     cout << "      *** MODO DE BUSQUEDA ***      " << endl;
    
-    cout << " Nombre de la busqueda: ";        /// Título de la búsqueda
+    cout << " Nombre de la busqueda: ";
     cin.ignore();
     getline(cin, nameOfSearch);
     resultFile << endl << " TITULO: " << nameOfSearch << endl << endl;
-    // cin >> nameOfSearch;
     
-    while (true)                    /// Permanecer en el modo de búsqueda hasta que se termine o el usuario decida salir.
+    while (true)
     {
         cout << endl;
         cout << " ¿Como quiere buscar? " << endl;
         cout << " 'checkTab' o 'HasFeatures' o 'Show' o 'Exit') : ";
-        //cin.ignore();
         getline(cin, searchChoice);
-        //cin >> searchChoice;
+
         searchChoice = lowerCase(searchChoice);
         
-        if (searchChoice == "exit" || searchChoice == "quit")   /// Salir del modo de búsqueda si el usuario quiere
+        if (searchChoice == "exit" || searchChoice == "quit")
         {
             reset();
             break;
         }    
         
-        else if (searchChoice == "checkTab")           /// Llamar a checkTab
+        else if (searchChoice == "checkTab")
         {        
-        cout << " Nombre de la tabla:  ";                  /// Pregunte por el tabla para buscar
-        //cin.ignore();
+        cout << " Nombre de la tabla:  "; 
         getline(cin, lookFor);
         lookFor = lowerCase(lookFor);           
             
         checkTab(root, lookFor);           
-        //checkTab(ptrToSearch, lookFor);          /// <- Useless
         }
-        else if (searchChoice == "hasfeatures" || searchChoice == "hasfeature")         /// Llamar a hasFeature
+        else if (searchChoice == "hasfeatures" || searchChoice == "hasfeature") 
         {
-            terminate = hasFeature();                          /// Termina el 'Modo de búsqueda' si hasFeature devuelve False
+            terminate = hasFeature();  
             if (terminate == false) { 
                 reset();
                 break; 
             }     
         }
-        else if (searchChoice == "show" || searchChoice == "Show")          /// Mostrar los tablas que actualmente coinciden con los criterios
+        else if (searchChoice == "show" || searchChoice == "Show") 
         {
             show();
         }
         
         else
         {
-            cout << " Entrada invalida " << endl;          /// Muestra esto si la entrada del usuario es inválida
+            cout << " Entrada invalida " << endl;
         }
     
-    } // Exit While    
+    } 
     cout << " ******************************" << endl;
 }
 
 bool Tree::hasFeature()
 {
-        cout << " Caracteristica: ";               /// Pregunte por la característica a buscar
-        //cin.ignore();
+        cout << " Caracteristica: ";
         getline(cin, hFeature);
         hFeature = lowerCase(hFeature);
     
     
-    for (int i=0; i <myVec.size();/*i++*/)    /// Vector de bucle para comprobar la característica
+    for (int i=0; i <myVec.size();) 
     {
         bool found = false;
-        for ( int j=0; j< myVec[i].VecAttribute.size(); j++)   /// comprobar cada atributo
+        for ( int j=0; j< myVec[i].VecAttribute.size(); j++)
         {
-            if (hFeature == myVec[i].VecAttribute[j] && !found) /// establecer encontrada como verdadero si se encuentra la característica
+            if (hFeature == myVec[i].VecAttribute[j] && !found)
                 {
                     found = true;                
-                    //break;
-                    //  myVec[i].VecAttribute.erase(myVec[i].VecAttribute.begin(), myVec[i].VecAttribute.begin()+j);
-                // myVec[i].VecAttribute.erase(myVec[i].VecAttribute.begin()+j);
-                    //break;
                 } 
             
         }
-        if (found == false)         /// Borrar el elemento (tabla) si no tiene la característica
+        if (found == false)
         {
             myVec.erase(myVec.begin()+i);
-            // myVec[i].VecAttribute.erase(myVec[i].VecAttribute.begin()+i);
         }
         else{
-            i++;   /// incrementar el bucle
+            i++;
         }  
     }  
     
-    if (myVec.size() == 1)        /// Si sólo 1 tabla tiene la característica, la muestra y devuelve False
+    if (myVec.size() == 1)
     {
         cout << endl;
         cout << " ¡¡¡FELICIDADES!!! ¡¡¡tabla encontrada!!! " << endl;
@@ -196,23 +176,22 @@ bool Tree::hasFeature()
             cout << " " << myVec[0].VecAttribute[i] << endl;
             resultFile << " " << myVec[0].VecAttribute[i] << endl;
         }
-        return false; // Falso significa que no hay más tablas que buscar = TERMINAR
+        return false;
     }
     else 
     {
-        return true; // Verdadero significa que hay MÁS tablas para buscar = NO TERMINAR
+        return true;
     }
 }
 
-
-void Tree::checkTab(TreeNode*& tree, string lookFor)      /// checkTab - Utiliza el árbol de búsqueda binario para buscar el tabla
+void Tree::checkTab(TreeNode*& tree, string lookFor) 
 {
     if (tree != NULL)
     {
-        if (tree->info == lookFor)      /// si el nombre del tabla coincide con
+        if (tree->info == lookFor) 
         {
             bool displayedIt = false;
-            for (int i=0; i<myVec.size(); i++)          /// mostrar sus atributos
+            for (int i=0; i<myVec.size(); i++) 
             {
                 if (lookFor == myVec[i].nameTab)
                 {
@@ -235,25 +214,24 @@ void Tree::checkTab(TreeNode*& tree, string lookFor)      /// checkTab - Utiliza
                 cout << " Tabla no encontrada " << endl;
             }
         }
-        else if (lookFor < tree->info)          /// si no, mira otro nodo (más pequeño)
+        else if (lookFor < tree->info)
         {
             checkTab(tree->left, lookFor);
         }
-        else if (lookFor > tree->info)          /// si no, mira otro nodo (mayor)
+        else if (lookFor > tree->info) 
         {
             checkTab(tree->right, lookFor);
         }
     }
-    else                                /// si el tabla no está en el sistema
+    else  
     {
         cout << " tabla no encontrada en el Sistema " << endl;
-        //return;
     }
     
 }
 
 
-void Tree::show()           /// Muestra los tablas que coinciden con los criterios de búsqueda
+void Tree::show()
 {
     if (myVec.empty())
     {
@@ -276,14 +254,12 @@ void Tree::show()           /// Muestra los tablas que coinciden con los criteri
 
 void Tree::reset()
 {
-    /// Antes de salir del modo de búsqueda
-    root = NULL;        /// Borrar todo el árbol (la raíz es ahora NULL)
-    myVec.clear();      /// Borrar todo el vector (Para reiniciar)
-    loadFile();         /// Rellenar los atributos leyendo todo desde el Archivo
-    /// Así que ahora todo vuelve a la normalidad y se actualiza.
+    root = NULL;
+    myVec.clear();
+    loadFile();
 }
 
-string Tree::lowerCase(string lowerCase)            /// que convierte la cadena en minúsculas
+string Tree::lowerCase(string lowerCase) 
 {    
     for (int i=0; i<lowerCase.length(); i++)
     {
