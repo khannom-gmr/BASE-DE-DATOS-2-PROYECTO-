@@ -6,7 +6,7 @@ make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --quest
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 30 16:05:46 2022
+# Make data base, printed on Sat Jul 02 02:34:44 2022
 
 # Variables
 
@@ -47,8 +47,7 @@ CLION = C:\Program Files\JetBrains\CLion 2022.1.2\bin;
 # environment
 WINDIR = C:\Windows
 # environment
-VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{},"_language 
-PackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{},"_languagePackSupport":true}
 # environment
 ONEDRIVE = C:\Users\gabri\OneDrive
 # environment
@@ -56,9 +55,11 @@ PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
+FPS_BROWSER_USER_PROFILE_STRING = Default
+# environment
 TMP = C:\Users\gabri\AppData\Local\Temp
 # makefile (from 'Makefile', line 54)
-SOURCES := src/main.cpp src/Tree.cpp src/Tree2.cpp
+SOURCES := src/main.cpp src/Tree.cpp
 # makefile (from 'Makefile', line 10)
 CXXFLAGS := -std=c++17 -Wall -Wextra -g
 # environment
@@ -68,7 +69,7 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-830bb7b4-808c-4cf6-a844-ec8a6735fe0c-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-860038c7-4905-4a09-a229-013a07d3a73d-sock
 # environment
 VSCODE_CWD = C:\Users\gabri\AppData\Local\Programs\Microsoft VS Code
 # default
@@ -204,7 +205,8 @@ SYSTEMROOT = C:\Windows
 # automatic
 +F = $(notdir $+)
 # environment
-APPDATA = C:\Users\gabri\AppData\Roaming
+APPDATA = C:\Users\gabri\AppData\Roam 
+ing
 # environment
 TEMP = C:\Users\gabri\AppData\Local\Temp
 # environment
@@ -234,17 +236,19 @@ PROCESSOR_REVISION = a503
 # default
 .RECIPEPREFIX := 
 # makefile (from 'Makefile', line 57)
-OBJECTS := src/main.o src/Tree.o src/Tree2.o
+OBJECTS := src/main.o src/Tree.o
 # environment
 LANG = C
 # environment
 PROCESSOR_LEVEL = 6
 # environment
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
+# environment
 VSCODE_PID = 13364
 # environment
 USERDOMAIN_ROAMINGPROFILE = PC_DE_GABRIEL
 # variable set hash-table stats:
-# Load=116/1024=11%, Rehash=0, Collisions=17/163=10%
+# Load=118/1024=12%, Rehash=0, Collisions=17/160=11%
 
 # Pattern-specific Variable Values
 
@@ -252,10 +256,10 @@ USERDOMAIN_ROAMINGPROFILE = PC_DE_GABRIEL
 
 # Directories
 
-# . (key c:/Users/gabri/Downloads/BASE-DE-DATOS-2-PROYECTO-, mtime 1656559016ll): 13 files, no impossibilities.
-# src (key c:/Users/gabri/Downloads/BASE-DE-DATOS-2-PROYECTO-/src, mtime 1656558824ll): 8 files, no impossibilities.
+# . (key c:/Users/gabri/Downloads/BASE-DE-DATOS-2-PROYECTO-, mtime 1656746641ll): 11 files, no impossibilities.
+# src (key c:/Users/gabri/Downloads/BASE-DE-DATOS-2-PROYECTO-/src, mtime 1656746605ll): 4 files, no impossibilities.
 
-# 21 files, no impossibilities in 2 directories.
+# 15 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -270,7 +274,7 @@ all: output main.exe
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/10=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 #  recipe to execute (from 'Makefile', line 68):
 	@echo Executing 'all' complete!
 
@@ -281,42 +285,20 @@ all: output main.exe
 
 # Not a target:
 src/main.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-29 22:13:44
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/Tree.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-29 22:11:32
-#  File has been updated.
-#  Successfully updated.
-
-main.exe: src/main.o src/Tree.o src/Tree2.o
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := main.exe
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := src/main.o src/Tree.o src/Tree2.o
-# automatic
-# | := 
-# automatic
-# < := src/main.o
-# automatic
-# ^ := src/main.o src/Tree.o src/Tree2.o
-# automatic
-# ? := src/main.o src/Tree.o src/Tree2.o
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/18=11%
+#  Modification time never checked.
+#  File has not been updated.
+
+main.exe: src/main.o src/Tree.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 74):
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $(OUTPUTMAIN) $(OBJECTS) $(LFLAGS) $(LIBS)
 
@@ -329,7 +311,7 @@ main.exe: src/main.o src/Tree.o src/Tree2.o
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-29 21:21:16
+#  Last modified 2022-07-02 02:03:00
 #  File has been updated.
 #  Successfully updated.
 
@@ -338,13 +320,6 @@ Makefile:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-# Not a target:
-src/Tree2.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-29 22:11:33
-#  File has been updated.
-#  Successfully updated.
 
 run: all
 #  Implicit rule search has not been done.
@@ -373,26 +348,45 @@ clean:
 
 output:
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-29 22:13:44
+#  Implicit/static pattern stem: ''
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := output
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/13=8%
 #  recipe to execute (from 'Makefile', line 71):
 	$(MD) $(OUTPUT)
 
 # files hash-table stats:
-# Load=13/1024=1%, Rehash=0, Collisions=0/35=0%
+# Load=12/1024=1%, Rehash=0, Collisions=0/33=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 29 / storage = 232 B / avg = 8 B
-# current buf: size = 8162 B / used = 232 B / count = 29 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 24 / storage = 187 B / avg = 7 B
+# current buf: size = 8162 B / used = 187 B / count = 24 / avg = 7 B
 
-# strcache performance: lookups = 50 / hit rate = 42%
+# strcache performance: lookups = 43 / hit rate = 44%
 # hash-table stats:
-# Load=29/8192=0%, Rehash=0, Collisions=2/50=4%
-# Finished Make data base on Thu Jun 30 16:05:46 2022
+# Load=24/8192=0%, Rehash=0, Collisions=2/43=5%
+# Finished Make data base on Sat Jul 02 02:34:44 2022
 
  

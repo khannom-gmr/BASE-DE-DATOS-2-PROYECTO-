@@ -14,13 +14,12 @@ void displayInst()
     cout << "  ADD: Agregara informacion de su tabla al archivo " << endl;
     cout << "  SEARCH: Buscara la tabla " << endl;
     cout << "   ~ HASFEATURE: Buscar una tabla por su atributo " << endl;
-    cout << "   ~ CHECKAUTO: Buscar una tabla por su nombre " << endl;
+    cout << "   ~ CHECKTAB: Buscar una tabla por su nombre " << endl;
     cout << "   ~ SHOW: Mostrar las tablas que coinciden con sus criterios" << endl;
     cout << "   ~ Estas funciones solo funcionaran en BUSCAR" << endl;
     cout << "  El menu de usuario aceptara 'palabras' y 'numeros'"  << endl;
     cout << "  El programa no distingue entre mayusculas y minusculas " << endl;
 }
-
 
 int main(int argc, char** argv) {
 
