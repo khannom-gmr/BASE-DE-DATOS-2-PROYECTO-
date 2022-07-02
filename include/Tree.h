@@ -4,7 +4,7 @@
 #include <string>
 #include <fstream>
 #include <vector>
-#define fileLocation "autodata.txt"
+#define fileLocation "tabdata.txt"
 #define resultLocation "results.txt"
 
 using namespace std;
@@ -35,7 +35,7 @@ public:
     
     //string newCar;
     //string attribute;
-    ifstream dataFileRead;                  /// Archivo que almacena la información de las tablas "autodata.txt"
+    ifstream dataFileRead;                  /// Archivo que almacena la información de las tablas "tabdata.txt"
     ofstream dataFile;
     ofstream resultFile;                /// Archivo para el usuario "result.txt"
   
