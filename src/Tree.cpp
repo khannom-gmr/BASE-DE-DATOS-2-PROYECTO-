@@ -105,7 +105,7 @@ void Tree::preCheck()                    /// SEARCH MODE
     {
         cout << endl;
         cout << " ¿Como quiere buscar? " << endl;
-        cout << " 'checkTab' o 'HasFeatures' o 'Show' o 'Exit') : ";
+        cout << " 'showtab' o 'HasFeatures' o 'Show' o 'Exit') : ";
         //cin.ignore();
         getline(cin, searchChoice);
         //cin >> searchChoice;
@@ -117,7 +117,7 @@ void Tree::preCheck()                    /// SEARCH MODE
             break;
         }    
         
-        else if (searchChoice == "checkTab")           /// Llamar a checkTab
+        else if (searchChoice == "showtab")           /// Llamar a checkTab
         {        
         cout << " Nombre de la tabla:  ";                  /// Pregunte por el tabla para buscar
         //cin.ignore();
