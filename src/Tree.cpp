@@ -94,7 +94,7 @@ void Tree::preCheck()
     {
         cout << endl;
         cout << " ¿Como quiere buscar? " << endl;
-        cout << " 'checkTab' o 'HasFeatures' o 'Show' o 'Exit') : ";
+        cout << " 'vertabla' o 'HasFeatures' o 'Show' o 'Exit') : ";
         getline(cin, searchChoice);
 
         searchChoice = lowerCase(searchChoice);
@@ -105,9 +105,9 @@ void Tree::preCheck()
             break;
         }    
         
-        else if (searchChoice == "checkTab")
+        else if (searchChoice == "vertabla")
         {        
-        cout << " Nombre de la tabla:  "; 
+        cout << " Nombre de la tabla: "; 
         getline(cin, lookFor);
         lookFor = lowerCase(lookFor);           
             
@@ -195,7 +195,7 @@ void Tree::checkTab(TreeNode*& tree, string lookFor)
             {
                 if (lookFor == myVec[i].nameTab)
                 {
-                    resultFile << endl << " checkTab: " << endl << lookFor << endl;
+                    resultFile << endl << "checkTab: " << endl << lookFor << endl;
                     cout << " Attributes: " << endl;
                     
                     for (int j=0; j< myVec[i].VecAttribute.size(); j++)
