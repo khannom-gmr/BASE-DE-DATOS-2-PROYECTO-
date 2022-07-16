@@ -1,0 +1,250 @@
+aea
+ TITULO: rrr
+
+
+ checkTab: 
+aea
+dikowon
+conerowon
+llicawon
+keritowon
+
+
+ TITULO: rrrrra
+
+
+ TITULO: rrrraea
+
+
+ Show: 
+ Los tablas que coinciden con sus criterios de busqueda son: 
+ 1.  
+
+
+ Show: 
+ Los tablas que coinciden con sus criterios de busqueda son: 
+ 1.  
+
+
+ TITULO: busqueda
+
+
+ Show: 
+ Los tablas que coinciden con sus criterios de busqueda son: 
+ 1.  aea
+
+
+ checkTab: 
+aea
+
+ TITULO: busqueda2
+
+
+ Show: 
+ Los tablas que coinciden con sus criterios de busqueda son: 
+ 1.  aea
+
+
+ checkTab: 
+aea
+
+ TITULO: busqueda3
+
+
+ checkTab: 
+aea
+
+ Show: 
+ Los tablas que coinciden con sus criterios de busqueda son: 
+ 1.  aea
+
+
+ TITULO: busqueda4
+
+
+ Show: 
+ Los tablas que coinciden con sus criterios de busqueda son: 
+ 1.  aea
+
+
+ TITULO: busqueda5
+
+
+ checkTab: 
+aea
+
+ Show: 
+ Los tablas que coinciden con sus criterios de busqueda son: 
+ 1.  aea
+
+
+ TITULO: busqueda6
+
+
+ Show: 
+ Los tablas que coinciden con sus criterios de busqueda son: 
+ 1.  aea,edad,nombre,,
+
+
+ TITULO: busqueda7
+
+
+ Show: 
+ Los tablas que coinciden con sus criterios de busqueda son: 
+ 1.  aea
+
+
+ checkTab: 
+aea
+
+ TITULO: busqueda8
+
+
+ checkTab: 
+aea
+edad
+nombre
+
+
+
+ TITULO: busqueda9
+
+
+ checkTab: 
+aea
+edad
+nombre
+
+
+perro
+raza
+color
+peso
+
+
+
+ TITULO: busqueda10
+
+
+ checkTab: 
+aea
+edad
+nombre
+
+
+
+perro
+raza
+color
+peso
+
+
+
+ TITULO: busqueda11
+
+
+ TITULO: busqueda12
+
+
+ TITULO: busqueda13
+
+
+ TITULO: busqueda14
+
+
+ TITULO: busqueda17
+
+
+ checkTab: 
+aea
+edad
+nombre,,
+
+ TITULO: busqueda16
+
+
+ checkTab: 
+aea
+edad
+nombre,,
+
+ TITULO: busqueda18
+
+
+ checkTab: 
+aea
+edad
+nombre
+
+
+perro
+raza
+color
+peso
+
+
+
+ TITULO: busqueda19
+
+
+ checkTab: 
+aea
+edad
+nombre
+
+
+perro
+raza
+color
+peso
+
+
+
+ TITULO: busqueda20
+
+
+ TITULO: busqueda21
+
+
+ checkTab: 
+aea
+edad
+nombre
+
+
+perro
+raza
+color
+peso
+
+
+
+ TITULO: busqueda22
+
+
+ TITULO: busqueda23
+
+
+ checkTab: 
+aea
+edad
+nombre
+
+
+perro
+raza
+color
+peso
+
+
+
+ TITULO: busqueda24
+
+
+ checkTab: 
+kiro
+rrrra
+aeaeaeaea
+kerito
+kirito
+

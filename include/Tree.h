@@ -78,6 +78,10 @@ public:
     /// Función: Restablece la estructura antes de salir del modo de búsqueda
     /// Pre: la estructura ha sido inicializada
     /// Post: la estructura se restablece y se actualiza
+
+    void borrar(string myNewTab2);
+
+    void actualizar(string myNewTab2);
     
    string lowerCase(string lowerCase);
    /// Función: Convertir la cadena a minúsculas
@@ -95,6 +99,8 @@ public:
 private:
     //TreeNode* root;
     TreeNode* passTree; /// <- Useless
+
+    void borrarWorker();
 };
 
 #endif

@@ -18,8 +18,45 @@ Tree::Tree() {
 }
 
 void Tree::loadFile() {
-    
-    string trash;
+	ifstream file("tabdata.txt");
+    tabInfo tab;
+    getline(file, tab.nameTab, ',');
+
+    while (file.good()) {
+        getline(file, tab.attribute, ',');
+        tab.attribute = lowerCase(tab.attribute);
+        tab.VecAttribute.push_back(tab.attribute);
+    }
+
+    myVec.push_back(tab);
+    insertTab(root, tab);
+    file.close();
+}
+
+// Función para eliminar una tabla y sus atributos
+void Tree::borrar(string nameTab) {
+    ifstream file("tabdata.txt");
+
+    string line;
+    string name;
+    string attribute;
+    vector <string> VecAttribute;
+    while (getline(file, line)) {
+        name = line.substr(0, line.find(','));
+        attribute = line.substr(line.find(',') + 1);
+        attribute = lowerCase(attribute);
+        VecAttribute.push_back(attribute);
+        if (name == nameTab) {
+            myVec.erase(myVec.begin());
+        }
+    }
+}
+
+// Función para actualizar una tabla y sus atributos
+void Tree::actualizar(string nameTab) {
+    ifstream file("tabdata.txt");
+    borrar(nameTab);
+    askInfo();
 }
 
 void Tree::askInfo()

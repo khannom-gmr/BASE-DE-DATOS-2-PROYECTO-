@@ -48,17 +48,20 @@ int main(int argc, char** argv) {
     
     fcnCallerOld.loadFile();
       
-    while (menuChoice != "3" && menuChoice != "quit" && menuChoice != "exit" )
+    while (menuChoice != "5" && menuChoice != "quit" && menuChoice != "exit" )
     {
-        cout << endl << endl; 
+        cout << endl << endl;
         cout << " ******************************" << endl;
         cout << " ~~~~~~~~~~~~ MENU ~~~~~~~~~~~~" << endl;
         cout << " ******************************" << endl;
         cout << endl;
+
         cout << " Que le gustaria hacer? " << endl;
         cout << " 1 - Modo Agregar (add) " << endl;
         cout << " 2 - Modo Buscar (search) " << endl;
-        cout << " 3 - Quit (quit)" << endl;
+        cout << " 3 - Modo Eliminar (delete) " << endl;
+        cout << " 4 - Modo Actualizar (update) " << endl;
+        cout << " 5 - Quit (quit)" << endl;
         cout << " Eleccion: ";
         cin >> menuChoice;
         menuChoice = fcnCallerOld.lowerCase(menuChoice);
@@ -74,9 +77,23 @@ int main(int argc, char** argv) {
         {           //fcnCaller.hasFeature();
             fcnCallerOld.preCheck();
         }
+        else if (menuChoice == "3" || menuChoice == "delete") // DELETE
+        {
+            string tableName;
+            cout << " Ingrese en nombre de la tabla: ";
+            cin >> tableName;
+            fcnCallerOld.borrar(tableName);
+        }
+        else if (menuChoice == "4" || menuChoice == "update") // UPDATE
+        {
+            string tableName;
+            cout << " Ingrese en nombre de la tabla: ";
+            cin >> tableName;
+            fcnCallerOld.actualizar(tableName);
+        }
         else
         {
-            if (menuChoice != "quit" && menuChoice != "exit" && menuChoice != "3")  /// Quit
+            if (menuChoice != "quit" && menuChoice != "exit" && menuChoice != "5")  /// Quit
             {
                 cout << " ¡Entrada invalida! Intentelo de nuevo " << endl;
             }
