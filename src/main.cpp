@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
     displayInst();
         
     string menuChoice = "0"; 
-    Tree fcnCallerOld;
+    Tree fcnCallerOld; //<- Esta es la clase que llama a las funciones
     
     fcnCallerOld.loadFile();
       
@@ -51,7 +51,7 @@ int main(int argc, char** argv) {
         
         cout << endl;
 
-        if (menuChoice == "1" || menuChoice == "add") // ADD A NEW CAR
+        if (menuChoice == "1" || menuChoice == "add") // ADD A NEW TAB
         {        
             //fcnCaller.functionAdd();
             fcnCallerOld.askInfo();
