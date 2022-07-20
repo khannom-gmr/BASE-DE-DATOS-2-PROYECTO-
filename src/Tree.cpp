@@ -69,7 +69,7 @@ void Tree::askInfo()
     dataFile << endl;
      cout << " Introduzca el nombre del tabla: ";    /// Obtener el nombre del tabla
     cin.ignore();
-    //cin >> newCar;
+
     getline(cin, myNewTab.nameTab);//, '\n');  
     dataFile << myNewTab.nameTab << ",";   /// Envíalo al archivo
     //myNewTab.border = "*";
@@ -202,10 +202,6 @@ bool Tree::hasFeature()
             if (hFeature == myVec[i].VecAttribute[j] && !found) /// establecer encontrada como verdadero si se encuentra la característica
                 {
                     found = true;                
-                    //break;
-                    //  myVec[i].VecAttribute.erase(myVec[i].VecAttribute.begin(), myVec[i].VecAttribute.begin()+j);
-                // myVec[i].VecAttribute.erase(myVec[i].VecAttribute.begin()+j);
-                    //break;
                 } 
             
         }

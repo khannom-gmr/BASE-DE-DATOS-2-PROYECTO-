@@ -29,11 +29,10 @@ public:
      vector <tabInfo> myVec;
      
     // vector <string> VecAttribute;
-    // tabInfo myNewCar;
      tabInfo searchTabs;                /// struct de tipo tabInfo
      vector <tabInfo> matchingTabs;  /// <- Useless
     
-    //string newCar;
+    
     //string attribute;
     ifstream dataFileRead;                  /// Archivo que almacena la información de las tablas "tabdata.txt"
     ofstream dataFile;
