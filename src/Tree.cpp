@@ -98,7 +98,6 @@ void Tree::askInfo()
 
     cout << "    Tabla agregada con exito!    " << endl;
     cout << " ******************************" << endl;
-   // cout << endl;
     cout << endl;
 }
 
