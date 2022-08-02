@@ -25,3 +25,21 @@ peso
 
  TITULO: busqueda03
 
+
+ TITULO: busqueda02
+
+
+ Show: 
+ Los tablas que coinciden con sus criterios de busqueda son: 
+ 1.  perro
+
+
+ checkTab: 
+perro
+raza
+color
+peso
+
+
+
+
