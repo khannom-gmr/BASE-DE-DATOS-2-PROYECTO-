@@ -8,7 +8,7 @@ make.exe: *** No rule to make target 'src/lru_replacer.o', needed by 'main.exe'.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jul 24 18:17:24 2022
+# Make data base, printed on Mon Aug 22 18:26:28 2022
 
 # Variables
 
@@ -73,7 +73,7 @@ VSCODE_CWD = C:\Users\gabri\AppData\Local\Programs\Microsoft VS Code
 # default
 MAKE_HOST := x86_64-w64-mingw32
 # environment
-PATH = C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Python310\Scripts\;C:\Python310\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\MATLAB\R2022a\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Go\bin;C:\Program Files\Git\cmd;C:\Users\gabri\anaconda3;C:\Users\gabri\anaconda3\Library\mingw-w64\bin;C:\Users\gabri\anaconda3\Library\usr\bin;C:\Users\gabri\anaconda3\Library\bin;C:\Users\gabri\anaconda3\Scripts;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\gabri\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\gabri\AppData\Local\Programs\Python\Python39\;C:\Users\gabri\AppData\Local\Microsoft\WindowsApps;C:\MinGW\bin;C:\Users\gabri\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\gabri\AppData\Roaming\npm;C:\Users\gabri\AppData\Roaming\TinyTeX\bin\win32;C:\Program Files\heroku\bin;C:\Users\gabri\go\bin;C:\Program Files\JetBrains\CLion 2022.1.2\bin;;C:\Users\gabri\Downloads\w64devkit\bin;C:\tools\dart-sdk\bin;C:\Users\gabri\AppData\Roaming\Pub\Cache\bin;C:\Opencv\opencv\build\x64\vc15\bin;C:\Users\gabri\Downloads\Yacc\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Flex Windows\gcc\bin;C:\Flex Windows\Lex\bin;C:\Flex Windows\bison\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2022.1.3\bin;
+PATH = C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Python310\Scripts\;C:\Python310\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\MATLAB\R2022a\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Go\bin;C:\Program Files\Git\cmd;C:\Users\gabri\anaconda3;C:\Users\gabri\anaconda3\Library\mingw-w64\bin;C:\Users\gabri\anaconda3\Library\usr\bin;C:\Users\gabri\anaconda3\Library\bin;C:\Users\gabri\anaconda3\Scripts;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\gabri\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\gabri\AppData\Local\Programs\Python\Python39\;C:\Users\gabri\AppData\Local\Microsoft\WindowsApps;C:\MinGW\bin;C:\Users\gabri\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\gabri\AppData\Roaming\npm;C:\Users\gabri\AppData\Roaming\TinyTeX\bin\win32;C:\Program Files\heroku\bin;C:\Users\gabri\go\bin;C:\Program Files\JetBrains\CLion 2022.1.2\bin;;C:\Users\gabri\Downloads\w64devkit\bin;C:\tools\dart-sdk\bin;C:\Users\gabri\AppData\Roaming\Pub\Cache\bin;C:\Opencv\opencv\build\x64\vc15\bin;C:\Users\gabri\Downloads\Yacc\bin;C:\Program Files (x86)\GnuWin32\bin;C:\Flex Windows\gcc\bin;C:\Flex Windows\Lex\bin;C:\Flex Windows\bison\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2022.1.3\bin;;C:\Program Files\CMake\bin
 # environment
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # makefile (from 'Makefile', line 36)
@@ -103,7 +103,7 @@ LIB := lib
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_46704_TNHBSHAQYYONJNRS
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_43504_OFPTZINKGLZJDZRE
 # environment
 COMPUTERNAME = PC_DE_GABRIEL
 # environment
@@ -127,9 +127,9 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 CHOCOLATEYTOOLSLOCATION = C:\tools
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\gabri\AppData\Roaming\Code\CachedData\3b889b090b5ad5793f524b5d1d39fda662b96a2a
+VSCODE_CODE_CACHE_PATH = C:\Users\gabri\AppData\Roaming\Code\CachedData\e4503b30fc78200f846c62cf8091b76ff5547662
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 COMMONPROGRAMFILES = C:\Program Files\Common Files
 # environment
@@ -161,6 +161,8 @@ INCLUDE := include
 # makefile (from 'Makefile', line 31)
 SOURCEDIRS := src
 # environment
+ACSVCPORT = 17532
+# environment
 PROGRAMFILES(X86) = C:\Program Files (x86)
 # automatic
 %D = $(patsubst %/,%,$(patsubst %\,%,$(dir $%)))
@@ -181,7 +183,7 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 165 Stepping 3, GenuineIntel
 # environment
 OS = Windows_NT
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\b3ea7aa8500752aefd3763fb3da0c97c-1.69.2-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\b3ea7aa8500752aefd3763fb3da0c97c-1.70.2-main-sock
 # environment
 HOMEPATH = \Users\gabri
 # environment
@@ -215,6 +217,8 @@ MAKEFILES :=
 # makefile (from 'Makefile', line 7)
 CXX = g++
 # environment
+RLSSVCPORT = 22112
+# environment
 LC_ALL = C
 # makefile (from 'Makefile', line 51)
 LIBS := -Llib
@@ -239,11 +243,11 @@ PROCESSOR_LEVEL = 6
 # environment
 FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
 # environment
-VSCODE_PID = 46704
+VSCODE_PID = 43504
 # environment
 USERDOMAIN_ROAMINGPROFILE = PC_DE_GABRIEL
 # variable set hash-table stats:
-# Load=115/1024=11%, Rehash=0, Collisions=17/152=11%
+# Load=117/1024=11%, Rehash=0, Collisions=17/154=11%
 
 # Pattern-specific Variable Values
 
@@ -251,8 +255,8 @@ USERDOMAIN_ROAMINGPROFILE = PC_DE_GABRIEL
 
 # Directories
 
-# . (key c:/Users/gabri/Downloads/BASE-DE-DATOS-2-PROYECTO-, mtime 1658616506ll): 12 files, no impossibilities.
-# src (key c:/Users/gabri/Downloads/BASE-DE-DATOS-2-PROYECTO-/src, mtime 1658698674ll): 12 files, no impossibilities.
+# . (key c:/Users/gabri/Downloads/BASE-DE-DATOS-2-PROYECTO-, mtime 1659413277ll): 12 files, no impossibilities.
+# src (key c:/Users/gabri/Downloads/BASE-DE-DATOS-2-PROYECTO-/src, mtime 1659413277ll): 12 files, no impossibilities.
 
 # 24 files, no impossibilities in 2 directories.
 
@@ -359,7 +363,7 @@ clean:
 
 output:
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-23 19:09:47
+#  Last modified 2022-08-01 23:06:17
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 71):
@@ -391,6 +395,6 @@ src/schema.o:
 # strcache performance: lookups = 57 / hit rate = 33%
 # hash-table stats:
 # Load=38/8192=0%, Rehash=0, Collisions=2/57=4%
-# Finished Make data base on Sun Jul 24 18:17:24 2022
+# Finished Make data base on Mon Aug 22 18:26:28 2022
 
  

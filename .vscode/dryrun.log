@@ -3,21 +3,15 @@ make.exe: Entering directory 'c:/Users/gabri/Downloads/BASE-DE-DATOS-2-PROYECTO-
 mkdir output
  
 g++ -std=c++17 -Wall -Wextra -g -Iinclude -c src/main.cpp  -o src/main.o
- 
 g++ -std=c++17 -Wall -Wextra -g -Iinclude -c src/lru_replacer.cpp  -o src/lru_replacer.o
- 
 g++ -std=c++17 -Wall -Wextra -g -Iinclude -c src/clock_replacer.cpp  -o src/clock_replacer.o
- 
 g++ -std=c++17 -Wall -Wextra -g -Iinclude -c src/schema.cpp  -o src/schema.o
  
 g++ -std=c++17 -Wall -Wextra -g -Iinclude -c src/column.cpp  -o src/column.o
- 
 g++ -std=c++17 -Wall -Wextra -g -Iinclude -c src/parallel_buffer_pool_manager.cpp  -o src/parallel_buffer_pool_manager.o
- 
 g++ -std=c++17 -Wall -Wextra -g -Iinclude -c src/Tree.cpp  -o src/Tree.o
  
 g++ -std=c++17 -Wall -Wextra -g -Iinclude -c src/buffer_pool_manager_instance.cpp  -o src/buffer_pool_manager_instance.o
- 
 g++ -std=c++17 -Wall -Wextra -g -Iinclude -o output\main.exe src/main.o src/lru_replacer.o src/clock_replacer.o src/schema.o src/column.o src/parallel_buffer_pool_manager.o src/Tree.o src/buffer_pool_manager_instance.o  -Llib
 echo Executing 'all' complete!
 make.exe: Leaving directory 'c:/Users/gabri/Downloads/BASE-DE-DATOS-2-PROYECTO-'
