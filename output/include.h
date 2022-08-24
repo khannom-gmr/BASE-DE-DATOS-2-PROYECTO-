@@ -1,0 +1,11 @@
+#include "include/Registro.h"
+#include "include/Columna.h"
+#include "include/Tabla.h"
+#include "include/BD.h"
+#include "include/ImportarTabla.h"
+#include "include/InsertarEnTabla.h"
+#include "include/EliminarEnTabla.h"
+#include "include/EliminarTabla.h"
+#include "include/Consultas.h"
+#include "include/Enlace.h"
+
