@@ -81,7 +81,7 @@ public:
 	}
 	friend ostream& operator<<(ostream& out, const EliminaTabla& b)
 	{
-		out << "Nr baze :" << b.nrBD << endl;
+		out << "Nr Bases :" << b.nrBD << endl;
 		for (int i = 0; i < b.nrBD; i++)
 		{
 			out << *b.baze[i] << endl;

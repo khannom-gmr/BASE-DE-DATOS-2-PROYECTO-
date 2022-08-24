@@ -19,7 +19,7 @@ class Registro: public archivoCSV
 	string registro;
 	int idRegistro;
 public:
-	//constructor fara parametri
+	//constructor sin parámetros
 	void importCSV(fstream &file)
 	{
 		getline(file, registro, ',');
@@ -30,14 +30,14 @@ public:
 		this->registro = "Desconocido";
 		this->idRegistro = 0;
 	}
-	//constructor cu toti parametri
+	//constructor con todos los parámetros
 	Registro(string registro, int idRegistro)
 	{
 		this->registro = registro;
 		this->idRegistro = idRegistro;
 
 	}
-	//getteri
+	//getters
 	string getRegistro()
 	{
 		return this->registro;
@@ -46,7 +46,7 @@ public:
 	{
 		return this->idRegistro;
 	}
-	//setteri
+	//setters
 	void setRegistro(string registro)
 	{
 		this->registro = registro;
@@ -72,7 +72,6 @@ public:
 	{
 
 		out << inr.registro << endl;
-		/*out << "Id Registro: " << i.idRegistro << endl;*/
 		return out;
 	}
 	friend ofstream& operator<<(ofstream& out, const Registro& inr)
@@ -92,7 +91,6 @@ public:
 	}
 	friend ifstream& operator>>(ifstream& in, Registro& inr)
 	{
-
 		in >> inr.registro;
 		in >> inr.idRegistro;
 		return in;

@@ -10,7 +10,7 @@ class Columna
 	int nrRegistros;
 	Registro** registros;
 public:
-	//constructor fara parametri
+	//constructor sin parámetros
 	
 	Columna()
 	{
@@ -28,7 +28,7 @@ public:
 		this->nrRegistros = 0;
 		this->registros = NULL;
 	}
-	//constructor cu toti parametri
+	//constructor con todos los parámetros
 	Columna(string numeColumna, string tipColumna, float tam, int nrRegistros, Registro** registros)
 	{
 		this->numeColumna = numeColumna;
@@ -62,7 +62,7 @@ public:
 	{
 		return this->nrRegistros;
 	}
-	//setteri
+	//setters
 	void setNumeColumna(string numeColumna)
 	{
 		this->numeColumna = numeColumna;
@@ -99,7 +99,7 @@ public:
 			delete[]this->registros;
 		}
 	}
-	//constructor de copiere
+	//constructor de copia
 	Columna(const Columna& c)
 	{
 		this->numeColumna = c.numeColumna;
@@ -133,7 +133,6 @@ public:
 	{
 
 		out << c.numeColumna << endl;
-		//out << "Numar Inregistrari: " << c.nrRegistros << endl;
 
 		for (int i = 0; i < c.nrRegistros; i++)
 		{
@@ -173,12 +172,10 @@ public:
 			in >> *c.registros[i];
 		}
 
-
 		return in;
 	}
 	friend ifstream& operator>>(ifstream& in, Columna& c)
 	{
-
 		in >> c.numeColumna;
 		in >> c.tipColumna;
 		in >> c.tam;
@@ -190,8 +187,6 @@ public:
 			c.registros[i] = new Registro();
 			in >> *c.registros[i];
 		}
-
-
 		return in;
 	}
 	//operator cast

@@ -11,14 +11,14 @@ class BD
 	Tabla** tabla;
 
 public:
-	//constructor fara parametrii
+	//constructor sin parámetros
 	BD()
 	{
 		this->numeBD = " ";
 		this->Nro_Tabla  = 0;
 		this->tabla = NULL;
 	}
-	//constructor cu toti parametrii
+	//constructor con todos los parámetros
 	BD(string numeBD, int Nro_Tabla , Tabla** tabla)
 	{
 		this->numeBD = numeBD;
@@ -75,7 +75,7 @@ public:
 		}
 	}
 
-	//constructorul de copiere
+	//constructor de copia
 	BD(const BD& b)
 	{
 		this->numeBD = b.numeBD;
@@ -114,7 +114,7 @@ public:
 		return out;
 
 	}
-	//operatorul >>
+	//operador >>
 
 	friend istream& operator>>(istream& in, BD& b)
 	{

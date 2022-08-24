@@ -4,14 +4,14 @@
 // Clase Tabla
 class Tabla
 {
-	string cheiePrimara="ch";
+	string clavePrimaria="ch";
 	string nombreTabla;
 	int nrColumnas;
 	Columna** columnas;
 
 
 public:
-	//constructor fara parametri
+	//constructor sin parámetros
 	Tabla()
 	{
 		this->nombreTabla = "Desconocido";
@@ -24,7 +24,7 @@ public:
 		this->nrColumnas = 0;
 		this->columnas = NULL;
 	}
-	//constructor cu toti parametri
+	//constructor con todos los parámetros
 	Tabla( string nombreTabla, int nrColumnas, Columna** columnas)
 	{
 	
@@ -36,9 +36,9 @@ public:
 			this->columnas[i] = columnas[i];
 		}
 	}
-	string getCheiePrimara()
+	string getclavePrimaria()
 	{
-		return this->cheiePrimara;
+		return this->clavePrimaria;
 	}
 	string getNombreTabla()
 	{
@@ -53,9 +53,9 @@ public:
 		return this->nrColumnas;
 	}
 
-	void setCheiePrimara(string cheiePrimara)
+	void setclavePrimaria(string clavePrimaria)
 	{
-		this->cheiePrimara = cheiePrimara;
+		this->clavePrimaria = clavePrimaria;
 	}
 	void setNombreTabla(string nombreTabla)
 	{
@@ -87,11 +87,11 @@ public:
 		}
 
 	}
-	//constructor de copiere
+	//constructor de copia
 	Tabla(const Tabla& t)
 	{
 
-		this->cheiePrimara = t.cheiePrimara;
+		this->clavePrimaria = t.clavePrimaria;
 		this->nombreTabla = t.nombreTabla;
 		this->nrColumnas = t.nrColumnas;
 		this->columnas = new Columna * [t.nrColumnas];
@@ -108,7 +108,7 @@ public:
 			delete[]this->columnas;
 		}
 
-		this->cheiePrimara = t.cheiePrimara;
+		this->clavePrimaria = t.clavePrimaria;
 		this->nombreTabla = t.nombreTabla;
 		this->nrColumnas = t.nrColumnas;
 		this->columnas = new Columna * [t.nrColumnas];
@@ -158,8 +158,6 @@ public:
 	}
 	friend ifstream& operator>>(ifstream& in, Tabla& t)
 	{
-
-
 		in >> t.nombreTabla;
 		delete[]t.columnas;
 		in >> t.nrColumnas;
@@ -216,9 +214,9 @@ public:
 	}
 	void escribeEnArchivoBinario(fstream& archivo)
 	{
-		int LgCheiePrimara = this->cheiePrimara.length();
-		archivo.write((char*)&LgCheiePrimara, sizeof(int));
-		archivo.write(this->cheiePrimara.c_str(), LgCheiePrimara);
+		int LgclavePrimaria = this->clavePrimaria.length();
+		archivo.write((char*)&LgclavePrimaria, sizeof(int));
+		archivo.write(this->clavePrimaria.c_str(), LgclavePrimaria);
 		int LgNombreTabla = this->nombreTabla.length();
 		archivo.write((char*)&LgNombreTabla, sizeof(int));
 		archivo.write(this->nombreTabla.c_str(), LgNombreTabla);
@@ -234,12 +232,12 @@ public:
 		{
 			delete[] this->columnas;
 		}
-		int LgCheiePrimara;
-		archivo.read((char*)&LgCheiePrimara, sizeof(int));
+		int LgclavePrimaria;
+		archivo.read((char*)&LgclavePrimaria, sizeof(int));
 		string a;
-		a.resize(LgCheiePrimara);
-		archivo.read((char*)a.c_str(), LgCheiePrimara);
-		this->cheiePrimara = a;
+		a.resize(LgclavePrimaria);
+		archivo.read((char*)a.c_str(), LgclavePrimaria);
+		this->clavePrimaria = a;
 		int LgNombreTabla;
 		archivo.read((char*)&LgNombreTabla, sizeof(int));
 		string b;
