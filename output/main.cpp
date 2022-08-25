@@ -52,7 +52,7 @@ int main()
 	/////////////////////////////////////////////////////////////
 	cout << "=======Archivos binarios=======" << endl;						//Lectura y escritura de archivos binarios (.bin)
 	cout << "=======Escribir en un archivo binario=======" << endl;
-	fstream fbI("fisierBInr.bin", ios::out | ios::binary);
+	fstream fbI("registroBInr.bin", ios::out | ios::binary);
 	if (fbI.is_open())
 	{
 		inr1.escribeEnArchivoBinario(fbI);
@@ -61,7 +61,7 @@ int main()
 	}
 	Registro inrBin;
 	cout << "=======Lectura de un archivo binario=======" << endl;
-	fstream fbIcit("fisierBInr.bin", ios::in | ios::binary);
+	fstream fbIcit("registroBInr.bin", ios::in | ios::binary);
 	if (fbIcit.is_open())
 	{
 		inrBin.leeDelArchivoBinario(fbIcit);
@@ -145,7 +145,7 @@ int main()
 
 	cout << "=======Archivos binarios=======" << endl;						//Escritura y lectura de columnas en binario(.bin)
 	cout << "=======Escribir en un archivo binario=======" << endl;
-	fstream fbC("fisierBCol.bin", ios::out | ios::binary);
+	fstream fbC("registroBCol.bin", ios::out | ios::binary);
 	if (fbC.is_open())
 	{
 		cn1.escribeEnArchivoBinario(fbC);
@@ -156,7 +156,7 @@ int main()
 	Columna colBin;
 	Columna colBin2;
 	cout << "=======Lectura de un archivo binario=======" << endl;
-	fstream fbCcit("fisierBCol.bin", ios::in | ios::binary);
+	fstream fbCcit("registroBCol.bin", ios::in | ios::binary);
 	if (fbCcit.is_open())
 	{
 		colBin.leeDelArchivoBinario(fbCcit);
@@ -211,7 +211,7 @@ int main()
 
 	cout << "=======Archivos binarios=======" << endl;
 	cout << "=======Escribir en un archivo binar=======" << endl;
-	fstream fbT("fisierBTab.bin", ios::out | ios::binary);
+	fstream fbT("registroBTab.bin", ios::out | ios::binary);
 	if (fbT.is_open())
 	{
 		tb1.escribeEnArchivoBinario(fbT);
@@ -220,7 +220,7 @@ int main()
 	}
 	Tabla tabBin;
 	cout << "=======Lectura del archivo binar=======" << endl;
-	fstream fbTcit("fisierBTab.bin", ios::in | ios::binary);
+	fstream fbTcit("registroBTab.bin", ios::in | ios::binary);
 	if (fbTcit.is_open())
 	{
 		tabBin.leeDelArchivoBinario(fbTcit);
@@ -262,7 +262,7 @@ int main()
 
 	cout << "=======Archivos binarios=======" << endl;
 	cout << "=======Escribir en un archivo binar=======" << endl;
-	fstream fbBD("fisierBinBD.bin", ios::out | ios::binary);
+	fstream fbBD("registroBinBD.bin", ios::out | ios::binary);
 	if (fbBD.is_open())
 	{
 		bd1.escribeEnArchivoBinario(fbBD);
@@ -271,7 +271,7 @@ int main()
 	}
 	BD bdBin;
 	cout << "=======Lectura del archivo binar=======" << endl;
-	fstream fbBDcit("fisierBinBD.bin", ios::in | ios::binary);
+	fstream fbBDcit("registroBinBD.bin", ios::in | ios::binary);
 	if (fbBDcit.is_open())
 	{
 		bdBin.leeDelArchivoBinario(fbBDcit);
