@@ -1,18 +1,16 @@
-#ifndef PAGE_H
-#define PAGE_H
+#pragma once
 #include <vector>
 #include <iostream>
 #include <string>
 
 namespace DB
 {
-    // registro y su metadata
     struct Record           
     {
-        std::string record;     // registro
-        int record_ID;          // id de registro
-        int page_number;        // a que pagina pertenece
-        int slot_number;        // a que slot pertenece
+        std::string record;    
+        int record_ID;         
+        int page_number;       
+        int slot_number;       
         Record(std::string record_,int record_ID_, int page_number_, int slot_number_)
         {
             record = record_;
@@ -22,15 +20,14 @@ namespace DB
         }
     };
 
-    // metadata de la pagina
     struct PageHeader       
     {
-        int size;                   // tamanio de la pagina
-        int num_free_slots;         // numero slots libres
-        int num_slots;              // numero slots usados
-        int current_page_number;    // id pagina
-        int next_page_number;       // id sig pagina
-        bool used;                  // si esta en uso
+        int size;              
+        int num_free_slots;    
+        int num_slots;           
+        int current_page_number; 
+        int next_page_number;     
+        bool used;                
         const PageHeader& operator=(const PageHeader& p_h)
         {
             if( &p_h != this )
@@ -53,27 +50,27 @@ namespace DB
         PageHeader header;
         std::vector<Record> page;
 
-        int get_available_slot();               // slot disponible para insertar registro
-        int getslot(int record_ID);             // obtiene slot de un registro
-        bool validate_recordID(int record_ID);  // verifica el record_id
+        int get_available_slot();               
+        int getslot(int record_ID);             
+        bool validate_recordID(int record_ID);  
 
     public:
         Page(int current_page_number_);
-        Page(const Page& new_page);                 // constructor copia
-        int insert_record(std::string record_data);                     // inserta registro
-        std::string get_record(int record_ID);                          // obtiene registro
-        void updated_record(int record_ID, std::string record_data);    // actualiza registro
-        void delete_record(int record_ID);                              // borra registro
-        bool has_space_for_record();                                    // hay espacio para registro
+        Page(const Page& new_page);                
+        int insert_record(std::string record_data);                    
+        std::string get_record(int record_ID);                         
+        void updated_record(int record_ID, std::string record_data);   
+        void delete_record(int record_ID);                             
+        bool has_space_for_record();                                   
 
-        bool is_used(){ return header.used; }                           // pagina esta en suo
-        int get_num_free_slot(){ return header.num_free_slots; }        // cantidad slots libres
-        int get_size(){ return header.size; }                           // cantidad maxima slots
-        int get_num_free_slots() { return header.num_free_slots; }      // slots libres                 
-        int get_num_slots() { return header.num_slots; }                // slots en total 
-        int page_number(){ return header.current_page_number; }         // page_id
-        int next_page_number(){ return header.next_page_number; }       // sig page_id
-        void clear();                                                   // elimina todos los registros
+        bool is_used(){ return header.used; }                           
+        int get_num_free_slot(){ return header.num_free_slots; }        
+        int get_size(){ return header.size; }                           
+        int get_num_free_slots() { return header.num_free_slots; }      
+        int get_num_slots() { return header.num_slots; }                
+        int page_number(){ return header.current_page_number; }         
+        int next_page_number(){ return header.next_page_number; }       
+        void clear();                                                   
 
         void set_page_number(int new_page_number)
         {
@@ -211,5 +208,3 @@ namespace DB
         header.used = 0;
     }
 }
-
-#endif

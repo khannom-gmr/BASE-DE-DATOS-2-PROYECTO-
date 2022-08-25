@@ -9,12 +9,12 @@ class Enlace
 {
 	string nombreEnlace;
 public:
-	//constructor fara parametri
+	//constructor sin parámetros
 	Enlace()
 	{
 		this->nombreEnlace = "Anonimo";
 	}
-	//constructor cu toti parametri
+	//constructor con todos los parámetros
 	Enlace(string nombreEnlace)
 	{
 		this->nombreEnlace = nombreEnlace;
@@ -63,19 +63,17 @@ public:
 
 class CrearTabla
 {
-
 	int nrBD = 1;
 	BD** baze;
 
 public:
-	//constructor fara parametrii
+	//constructor sin parámetros
 	CrearTabla()
 	{
-
 		this->nrBD = 0;
 		this->baze = NULL;
 	}
-	//constructor cu toti parametrii
+	//constructor con todos los parámetros
 	CrearTabla(BD& baze)
 	{
 
@@ -155,7 +153,7 @@ public:
 		return out;
 
 	}
-	//operatorul >>
+	//operador >>
 
 	friend istream& operator>>(istream& in, CrearTabla& b)
 	{
@@ -173,7 +171,6 @@ public:
 	}
 	friend ifstream& operator>>(ifstream& in, CrearTabla& b)
 	{
-
 		delete[]b.baze;
 		in >> b.nrBD;
 		b.baze = new BD * [b.nrBD];
@@ -210,8 +207,5 @@ public:
 			baze[i] = new BD();
 			archivo.read((char*)&*baze[i], sizeof(*baze[i]));
 		}
-
-
 	}
-
 };

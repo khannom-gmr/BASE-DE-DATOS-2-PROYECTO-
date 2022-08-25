@@ -3,10 +3,10 @@
 
 int main()
 {
-	Registro in("Tudor", 102);										//Hacemos unos registros previos para provar la escritura
-	Registro in1("Mircea", 103);
+	Registro in("Kiro", 102);										//Hacemos unos registros previos para provar la escritura
+	Registro in1("Cesar", 103);
 	Registro in2("David", 104);
-	Registro in3("Catalin", 105);
+	Registro in3("Gabriel", 105);
 	Registro in4("23", 102);
 	Registro in5("24", 103);
 	Registro in6("33", 104);
@@ -15,10 +15,10 @@ int main()
 	Registro in9("2400", 103);
 	Registro in10("3000", 104);
 	Registro in11("3100", 105);
-	Registro in12("Ciocolata", 21);
-	Registro in13("Lapte", 22);
-	Registro in14("Faina", 23);
-	Registro in15("Zahar", 24);
+	Registro in12("Chocolate", 21);
+	Registro in13("Leche", 22);
+	Registro in14("Vainilla", 23);
+	Registro in15("Azúcar", 24);
 	Registro in16("100", 21);
 	Registro in17("1", 22);
 	Registro in18("12", 23);
@@ -117,11 +117,7 @@ int main()
 	Columna c4("Nombre_producto", "char", 14, 4, registros3);
 	Columna c5("Gramaj", "char", 21, 4, registros4);
 	Columna c6("Pret", "char", 25, 4, registros5);
-	/*
-	cout << c4 << endl << endl;
-	cout << c5 << endl << endl;
-	cout << c6 << endl << endl;
-	*/
+
 	///////////////////////////////////////////////////////
 	cout << "=======Archivos de texto=======" << endl;							//Escritura y lectura de las culumnas
 	cout << "=======Escribir en un archivo=======" << endl;
@@ -314,7 +310,7 @@ int main()
 
 	cout << "=======Archivos binarios=======" << endl;
 	cout << "=======Escribir en un archivo binar=======" << endl;
-	fstream fcr("fisBinareCreare.bin", ios::out | ios::binary);
+	fstream fcr("Crear_Archivo_Binario.bin", ios::out | ios::binary);
 	if (fcr.is_open())
 	{
 		ct1.escribeEnArchivoBinario(fcr);
@@ -323,7 +319,7 @@ int main()
 	}
 
 	cout << "=======Lectura del archivo binar=======" << endl;
-	fstream fcrCit("fisBinareCreare.bin", ios::in | ios::binary);
+	fstream fcrCit("Crear_Archivo_Binario.bin", ios::in | ios::binary);
 	if (fcrCit.is_open())
 	{
 		ctBin.leeDelArchivoBinario(fcrCit);
@@ -406,7 +402,7 @@ int main()
 
 	cout << "=======Archivos binarios=======" << endl;
 	cout << "=======Escribir en un archivo binar=======" << endl;
-	fstream fin("fisBinareInserare.bin", ios::out | ios::binary);
+	fstream fin("Insertar_en_Binario.bin", ios::out | ios::binary);
 	if (fin.is_open())
 	{
 		inser1.escribeEnArchivoBinario(fin);
@@ -415,7 +411,7 @@ int main()
 	}
 
 	cout << "=======Lectura del archivo binar=======" << endl;
-	fstream finCit("fisBinareInserare.bin", ios::in | ios::binary);
+	fstream finCit("Insertar_en_Binario.bin", ios::in | ios::binary);
 	if (finCit.is_open())
 	{
 		inserBin.leeDelArchivoBinario(finCit);
@@ -454,7 +450,7 @@ int main()
 
 	cout << "=======Archivos binarios=======" << endl;
 	cout << "=======Escribir en un archivo binar=======" << endl;
-	fstream fmod("fisBinareModificare.bin", ios::out | ios::binary);
+	fstream fmod("Modificar_Binario.bin", ios::out | ios::binary);
 	if (fmod.is_open())
 	{
 		mod1.escribeEnArchivoBinario(fmod);
@@ -463,7 +459,7 @@ int main()
 	}
 
 	cout << "=======Lectura del archivo binar=======" << endl;
-	fstream fmodCit("fisBinareModificare.bin", ios::in | ios::binary);
+	fstream fmodCit("Modificar_Binario.bin", ios::in | ios::binary);
 	if (fmodCit.is_open())
 	{
 		modBin.leeDelArchivoBinario(fmodCit);
@@ -499,7 +495,7 @@ int main()
 	cout << str2 << endl << endl;
 	cout << "=======Archivos binarios=======" << endl;
 	cout << "=======Escribir en un archivo binar=======" << endl;
-	fstream fst("fisBinareStergere.bin", ios::out | ios::binary);
+	fstream fst("Borrar_del_Binario.bin", ios::out | ios::binary);
 	if (fst.is_open())
 	{
 		str1.escribeEnArchivoBinario(fst);
@@ -508,7 +504,7 @@ int main()
 	}
 
 	cout << "=======Lectura del archivo binar=======" << endl;
-	fstream fstCit("fisBinareStergere.bin", ios::in | ios::binary);
+	fstream fstCit("Borrar_del_Binario.bin", ios::in | ios::binary);
 	if (fstCit.is_open())
 	{
 		strBin.leeDelArchivoBinario(fstCit);
@@ -544,7 +540,7 @@ int main()
 	cout << impt2 << endl << endl;
 	cout << "=======Archivos binarios=======" << endl;
 	cout << "=======Escribir en un archivo binar=======" << endl;
-	fstream fimp("fisBinareImport.bin", ios::out | ios::binary);
+	fstream fimp("Importar_del_Binario.bin", ios::out | ios::binary);
 	if (fimp.is_open())
 	{
 		impt1.escribeEnArchivoBinario(fimp);
@@ -553,7 +549,7 @@ int main()
 	}
 
 	cout << "=======Lectura del archivo binar=======" << endl;
-	fstream fimpCit("fisBinareInserare.bin", ios::in | ios::binary);
+	fstream fimpCit("Insertar_en_Binario.bin", ios::in | ios::binary);
 	if (fimpCit.is_open())
 	{
 		imptBin.leeDelArchivoBinario(fimpCit);
@@ -563,11 +559,11 @@ int main()
 	cout << imptBin << endl;
 	cout << endl << endl << "Ejecucion de la orden" << endl << endl;
 	Tabla creataPtTeste;
-	BD bazaDeDatePTTeste = b1;
+	BD Prueba_BD = b1;
 	DeleteInTabla sdtTest;
 	string com;
 	int nrArchivoeCreateCuSelect=0;
-	CrearTabla ctPtTeste1(bazaDeDatePTTeste);
+	CrearTabla ctPtTeste1(Prueba_BD);
 	do
 	{
 		com = introducirComando();
@@ -744,23 +740,23 @@ int main()
 			else
 			{
 				int nrTabGasite = 0;
-				for (int i = 0; i < bazaDeDatePTTeste.getNrTabla(); i++)
+				for (int i = 0; i < Prueba_BD.getNrTabla(); i++)
 				{
 					
-					string numeTabCautata = bazaDeDatePTTeste.getTabla()[i]->getNombreTabla();
+					string numeTabCautata = Prueba_BD.getTabla()[i]->getNombreTabla();
 					if (cuvinteComanda[0] == numeTabCautata)
 					{
 						nrTabGasite++;
 						for (int j = 1; j < pozValues; j++)
 						{
 							string numeColumnaCautata = cuvinteComanda[j];
-							for (int z = 0; z < bazaDeDatePTTeste.getTabla()[i]->getNrColumnas(); z++)
+							for (int z = 0; z < Prueba_BD.getTabla()[i]->getNrColumnas(); z++)
 							{
-								if (cuvinteComanda[j] == bazaDeDatePTTeste.getTabla()[i]->getColumna()[z]->getNumeColumna())
+								if (cuvinteComanda[j] == Prueba_BD.getTabla()[i]->getColumna()[z]->getNumeColumna())
 								{
 									Registro* ptrRegistroTest = new Registro();
 									ptrRegistroTest->setRegistro(cuvinteComanda[j + pozValues]);
-									*bazaDeDatePTTeste.getTabla()[i]->getColumna()[z] += *ptrRegistroTest;
+									*Prueba_BD.getTabla()[i]->getColumna()[z] += *ptrRegistroTest;
 								}
 								else
 								{
@@ -781,12 +777,12 @@ int main()
 			string eliminaCom = com.substr(0, 11);
 			string restulComenzii = com.substr(12, -1);
 			int nrTab=0;
-			for (int i = 0; i < bazaDeDatePTTeste.getNrTabla(); i++)
+			for (int i = 0; i < Prueba_BD.getNrTabla(); i++)
 			{
-				if (restulComenzii == bazaDeDatePTTeste.getTabla()[i]->getNombreTabla())
+				if (restulComenzii == Prueba_BD.getTabla()[i]->getNombreTabla())
 				{
 					nrTab++;
-					bazaDeDatePTTeste.getTabla()[i]->setNrColumnas(0);
+					Prueba_BD.getTabla()[i]->setNrColumnas(0);
 
 				
 				}
@@ -852,12 +848,12 @@ int main()
 				string numeArchivoSelect = "SELECT_" + to_string(nrArchivoeCreateCuSelect);
 				numeArchivoSelect += ".txt";
 				ofstream afisareSelect(numeArchivoSelect);
-				for (int i = 0; i < bazaDeDatePTTeste.getNrTabla(); i++)
+				for (int i = 0; i < Prueba_BD.getNrTabla(); i++)
 				{
-					if (cuvinteComanda[2] == bazaDeDatePTTeste.getTabla()[i]->getNombreTabla())
+					if (cuvinteComanda[2] == Prueba_BD.getTabla()[i]->getNombreTabla())
 					{
-						afisareSelect << *bazaDeDatePTTeste.getTabla()[i];
-						cout << *bazaDeDatePTTeste.getTabla()[i] << endl << endl;
+						afisareSelect << *Prueba_BD.getTabla()[i];
+						cout << *Prueba_BD.getTabla()[i] << endl << endl;
 					}
 				}
 				nrArchivoeCreateCuSelect++;
@@ -868,18 +864,18 @@ int main()
 				string numeArchivoSelect = "SELECT_" + to_string(nrArchivoeCreateCuSelect);
 				numeArchivoSelect += ".txt";
 				ofstream afisareSelect(numeArchivoSelect);
-				for (int i = 0; i < bazaDeDatePTTeste.getNrTabla(); i++)
+				for (int i = 0; i < Prueba_BD.getNrTabla(); i++)
 				{
-					if (cuvinteComanda[nr-1] == bazaDeDatePTTeste.getTabla()[i]->getNombreTabla())
+					if (cuvinteComanda[nr-1] == Prueba_BD.getTabla()[i]->getNombreTabla())
 					{
-						for (int j = 0; j < bazaDeDatePTTeste.getTabla()[i]->getNrColumnas(); j++)
+						for (int j = 0; j < Prueba_BD.getTabla()[i]->getNrColumnas(); j++)
 						{
 							for (int z = 0; z < pozFrom; z++)
 							{
-								if (cuvinteComanda[z] == bazaDeDatePTTeste.getTabla()[i]->getColumna()[j]->getNumeColumna())
+								if (cuvinteComanda[z] == Prueba_BD.getTabla()[i]->getColumna()[j]->getNumeColumna())
 								{
-									afisareSelect << *bazaDeDatePTTeste.getTabla()[i]->getColumna()[j];
-									cout << *bazaDeDatePTTeste.getTabla()[i]->getColumna()[j] << endl << endl;
+									afisareSelect << *Prueba_BD.getTabla()[i]->getColumna()[j];
+									cout << *Prueba_BD.getTabla()[i]->getColumna()[j] << endl << endl;
 								}
 							}
 						}
@@ -894,11 +890,9 @@ int main()
 			cout << "Ha fallado" << endl;
 		}
 
-
-
 	} while (com.size() >= 3);
 	cout << "Las tablas de la base de datos son: ";
-	cout << bazaDeDatePTTeste<<endl;
+	cout << Prueba_BD<<endl;
 	cout << "-----------------------------------|||---------------------------" << endl;
 	cout << ctPtTeste1 << endl; 
 

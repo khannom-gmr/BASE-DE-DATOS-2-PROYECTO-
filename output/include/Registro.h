@@ -19,7 +19,7 @@ class Registro: public archivoCSV
 	string registro;
 	int idRegistro;
 public:
-	//constructor fara parametri
+	
 	void importCSV(fstream &file)
 	{
 		getline(file, registro, ',');
@@ -30,7 +30,7 @@ public:
 		this->registro = "Desconocido";
 		this->idRegistro = 0;
 	}
-	//constructor cu toti parametri
+	
 	Registro(string registro, int idRegistro)
 	{
 		this->registro = registro;
@@ -72,7 +72,6 @@ public:
 	{
 
 		out << inr.registro << endl;
-		/*out << "Id Registro: " << i.idRegistro << endl;*/
 		return out;
 	}
 	friend ofstream& operator<<(ofstream& out, const Registro& inr)

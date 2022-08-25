@@ -8,4 +8,4 @@
 #include "include/EliminarTabla.h"
 #include "include/Consultas.h"
 #include "include/Enlace.h"
-
+#include "buffer.h"

@@ -5,7 +5,6 @@
 
 namespace DB
 {
-    // algoritmo LRU
     class LRU : public Replacer
     {
     private:
@@ -17,7 +16,7 @@ namespace DB
         // numero paginas para el LRU
         explicit LRU(size_t num_pages);
         ~LRU();
-        bool Victim(int *frame_id) override;    // encuentra el indice del frame disponible
+        bool Victim(int *frame_id) override;
         void Pin(int frame_id) override;
         void Unpin(int frame_id) override;
         size_t Size() override;
@@ -36,16 +35,13 @@ namespace DB
             *frame_id = -1;
             return false;
         }
-        //Actualiza el frame_id con la cola w_list y lo elimina
-        //Limpia el iterador de paginas en la posicion del frame eliminado
+        
         *frame_id = w_list.back();
         w_list.pop_back();
         page_iters[*frame_id] = std::list<int>::iterator{};
         return true;
     }
 
-    // Este metodo debe llamarse despues de que una pagina se fije a un frame en Buffer.
-    // Deberia eliminar el frame que contiene la pagina anclada del replacer
     void LRU::Pin(int frame_id)
     {
         // Si no esta en el replacer termina
@@ -56,8 +52,6 @@ namespace DB
         page_iters[frame_id] = std::list<int>::iterator{};
     }
 
-    // Llamar a este método cuando el sea necesario retirar al frame del Buffer.
-    // Este metodo debe agregar el frame que contiene la pagina no fijada al replacer
     void LRU::Unpin(int frame_id)
     {
         // Si ya esta en el replacer termina

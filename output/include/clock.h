@@ -5,7 +5,6 @@
 
 namespace DB
 {
-    // algoritmo clock
     class Clock : public Replacer
     {
     private:

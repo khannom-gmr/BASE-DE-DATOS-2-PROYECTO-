@@ -1,5 +1,4 @@
-#ifndef FILE_H
-#define FILE_H
+#pragma once
 #include <vector>
 #include <string>
 #include <map>
@@ -205,5 +204,3 @@ namespace DB
         return true;
     }
 }
-
-#endif
