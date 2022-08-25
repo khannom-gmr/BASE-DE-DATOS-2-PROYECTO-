@@ -936,8 +936,6 @@ int main()
 			cout << "Ha fallado" << endl;
 		}
 
-
-
 	} while (com.size() >= 3);
 	cout << "Las tablas de la base de datos son: ";
 	cout << bazaDeDatePTTeste<<endl;
